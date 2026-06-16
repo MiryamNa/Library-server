@@ -1,0 +1,952 @@
+2026-03-11 17:27:17.979890+02:00 database: wrong user or password; user: "SA"
+org.h2.message.DbException: Wrong user name or password [28000-240]
+	at org.h2.message.DbException.get(DbException.java:223)
+	at org.h2.message.DbException.get(DbException.java:199)
+	at org.h2.message.DbException.get(DbException.java:188)
+	at org.h2.engine.Engine.openSession(Engine.java:154)
+	at org.h2.engine.Engine.openSession(Engine.java:222)
+	at org.h2.engine.Engine.createSession(Engine.java:201)
+	at org.h2.engine.SessionRemote.connectEmbeddedOrServer(SessionRemote.java:350)
+	at org.h2.jdbc.JdbcConnection.<init>(JdbcConnection.java:124)
+	at org.h2.util.JdbcUtils.getConnection(JdbcUtils.java:291)
+	at org.h2.server.web.WebServer.getConnection(WebServer.java:811)
+	at org.h2.server.web.WebApp.login(WebApp.java:1038)
+	at org.h2.server.web.WebApp.process(WebApp.java:226)
+	at org.h2.server.web.WebApp.processRequest(WebApp.java:176)
+	at org.h2.server.web.JakartaWebServlet.doGet(JakartaWebServlet.java:129)
+	at org.h2.server.web.JakartaWebServlet.doPost(JakartaWebServlet.java:166)
+	at jakarta.servlet.http.HttpServlet.service(HttpServlet.java:653)
+	at jakarta.servlet.http.HttpServlet.service(HttpServlet.java:723)
+	at org.apache.catalina.core.ApplicationFilterChain.doFilter(ApplicationFilterChain.java:128)
+	at org.apache.tomcat.websocket.server.WsFilter.doFilter(WsFilter.java:53)
+	at org.apache.catalina.core.ApplicationFilterChain.doFilter(ApplicationFilterChain.java:107)
+	at org.springframework.web.filter.RequestContextFilter.doFilterInternal(RequestContextFilter.java:100)
+	at org.springframework.web.filter.OncePerRequestFilter.doFilter(OncePerRequestFilter.java:116)
+	at org.apache.catalina.core.ApplicationFilterChain.doFilter(ApplicationFilterChain.java:107)
+	at org.springframework.web.filter.FormContentFilter.doFilterInternal(FormContentFilter.java:93)
+	at org.springframework.web.filter.OncePerRequestFilter.doFilter(OncePerRequestFilter.java:116)
+	at org.apache.catalina.core.ApplicationFilterChain.doFilter(ApplicationFilterChain.java:107)
+	at org.springframework.web.filter.CharacterEncodingFilter.doFilterInternal(CharacterEncodingFilter.java:199)
+	at org.springframework.web.filter.OncePerRequestFilter.doFilter(OncePerRequestFilter.java:116)
+	at org.apache.catalina.core.ApplicationFilterChain.doFilter(ApplicationFilterChain.java:107)
+	at org.apache.catalina.core.StandardWrapperValve.invoke(StandardWrapperValve.java:165)
+	at org.apache.catalina.core.StandardContextValve.invoke(StandardContextValve.java:77)
+	at org.apache.catalina.authenticator.AuthenticatorBase.invoke(AuthenticatorBase.java:492)
+	at org.apache.catalina.core.StandardHostValve.invoke(StandardHostValve.java:113)
+	at org.apache.catalina.valves.ErrorReportValve.invoke(ErrorReportValve.java:83)
+	at org.apache.catalina.core.StandardEngineValve.invoke(StandardEngineValve.java:72)
+	at org.apache.catalina.connector.CoyoteAdapter.service(CoyoteAdapter.java:341)
+	at org.apache.coyote.http11.Http11Processor.service(Http11Processor.java:397)
+	at org.apache.coyote.AbstractProcessorLight.process(AbstractProcessorLight.java:63)
+	at org.apache.coyote.AbstractProtocol$ConnectionHandler.process(AbstractProtocol.java:903)
+	at org.apache.tomcat.util.net.NioEndpoint$SocketProcessor.doRun(NioEndpoint.java:1779)
+	at org.apache.tomcat.util.net.SocketProcessorBase.run(SocketProcessorBase.java:52)
+	at org.apache.tomcat.util.threads.ThreadPoolExecutor.runWorker(ThreadPoolExecutor.java:946)
+	at org.apache.tomcat.util.threads.ThreadPoolExecutor$Worker.run(ThreadPoolExecutor.java:480)
+	at org.apache.tomcat.util.threads.TaskThread$WrappingRunnable.run(TaskThread.java:57)
+	at java.base/java.lang.Thread.run(Thread.java:1583)
+Caused by: org.h2.jdbc.JdbcSQLInvalidAuthorizationSpecException: Wrong user name or password [28000-240]
+	at org.h2.message.DbException.getJdbcSQLException(DbException.java:522)
+	at org.h2.message.DbException.getJdbcSQLException(DbException.java:489)
+	... 45 more
+2026-03-11 17:32:46.799033+02:00 jdbc[13]: exception
+org.h2.jdbc.JdbcSQLSyntaxErrorException: Table "BOOK" not found; SQL statement:
+INSERT INTO BOOK (ID, TITLE, AUTHOR, SUMMARY, PAGECOUNT, CATEGORY_ID) 
+VALUES (1, 'Spring in Action', 'Craig Walls', 'Guide to Spring Framework', 450, 1) [42102-240]
+2026-03-11 17:34:31.255308+02:00 jdbc[13]: exception
+org.h2.jdbc.JdbcSQLSyntaxErrorException: Table "BOOK" not found; SQL statement:
+INSERT INTO BOOK (ID, TITLE, AUTHOR, SUMMARY, PAGECOUNT, CATEGORY_ID)
+VALUES (1, 'Spring in Action', 'Craig Walls', 'Guide to Spring Framework', 450, 1) [42102-240]
+2026-03-11 17:34:33.735100+02:00 jdbc[13]: exception
+org.h2.jdbc.JdbcSQLSyntaxErrorException: Table "BOOK" not found; SQL statement:
+INSERT INTO BOOK (ID, TITLE, AUTHOR, SUMMARY, PAGECOUNT, CATEGORY_ID)
+VALUES (1, 'Spring in Action', 'Craig Walls', 'Guide to Spring Framework', 450, 1) [42102-240]
+2026-03-11 17:37:20.208250+02:00 jdbc[15]: exception
+org.h2.jdbc.JdbcSQLSyntaxErrorException: Table "HTE_COMMENT" already exists; SQL statement:
+create global temporary table HTE_comment(date date, rn_ integer not null, author_id bigint, book_id bigint, id bigint, content varchar(255), primary key (rn_)) transactional [42101-240]
+2026-03-11 17:37:20.211251+02:00 jdbc[15]: exception
+org.h2.jdbc.JdbcSQLSyntaxErrorException: Table "HTE_USERS" already exists; SQL statement:
+create global temporary table HTE_users(rn_ integer not null, status boolean, id bigint, firstName varchar(255), lastName varchar(255), mail varchar(255), password varchar(255), phoneNumber varchar(255), tz varchar(255), userName varchar(255), primary key (rn_)) transactional [42101-240]
+2026-03-11 17:37:20.212250+02:00 jdbc[15]: exception
+org.h2.jdbc.JdbcSQLSyntaxErrorException: Table "HTE_LEND" already exists; SQL statement:
+create global temporary table HTE_lend(lendingDate date, returnDate date, rn_ integer not null, book_id bigint, id bigint, userName_id bigint, primary key (rn_)) transactional [42101-240]
+2026-03-11 17:37:20.214250+02:00 jdbc[15]: exception
+org.h2.jdbc.JdbcSQLSyntaxErrorException: Table "HTE_BOOK" already exists; SQL statement:
+create global temporary table HTE_book(pageCount integer, rn_ integer not null, category_id bigint, id bigint, author varchar(255), image varchar(255), summary varchar(255), title varchar(255), primary key (rn_)) transactional [42101-240]
+2026-03-11 17:37:20.214250+02:00 jdbc[15]: exception
+org.h2.jdbc.JdbcSQLSyntaxErrorException: Table "HTE_CATEGORY" already exists; SQL statement:
+create global temporary table HTE_category(rn_ integer not null, id bigint, color varchar(255), description varchar(255), name varchar(255), primary key (rn_)) transactional [42101-240]
+2026-03-11 17:37:21.837610+02:00 database: flush
+org.h2.message.DbException: General error: "org.h2.mvstore.MVStoreException: The file is locked: C:/Users/user/projects/גאבה/app/mydb.mv.db [2.4.240/7]" [50000-240]
+	at org.h2.message.DbException.get(DbException.java:212)
+	at org.h2.message.DbException.convert(DbException.java:407)
+	at org.h2.mvstore.db.Store.lambda$new$0(Store.java:122)
+	at org.h2.mvstore.MVStore.handleException(MVStore.java:1675)
+	at org.h2.mvstore.MVStore.panic(MVStore.java:502)
+	at org.h2.mvstore.MVStore.<init>(MVStore.java:296)
+	at org.h2.mvstore.MVStore$Builder.open(MVStore.java:2164)
+	at org.h2.mvstore.db.Store.<init>(Store.java:133)
+	at org.h2.engine.Database.<init>(Database.java:328)
+	at org.h2.engine.Engine.openSession(Engine.java:92)
+	at org.h2.engine.Engine.openSession(Engine.java:222)
+	at org.h2.engine.Engine.createSession(Engine.java:201)
+	at org.h2.engine.SessionRemote.connectEmbeddedOrServer(SessionRemote.java:350)
+	at org.h2.jdbc.JdbcConnection.<init>(JdbcConnection.java:124)
+	at org.h2.Driver.connect(Driver.java:59)
+	at com.zaxxer.hikari.util.DriverDataSource.getConnection(DriverDataSource.java:144)
+	at com.zaxxer.hikari.pool.PoolBase.newConnection(PoolBase.java:373)
+	at com.zaxxer.hikari.pool.PoolBase.newPoolEntry(PoolBase.java:210)
+	at com.zaxxer.hikari.pool.HikariPool.createPoolEntry(HikariPool.java:488)
+	at com.zaxxer.hikari.pool.HikariPool.checkFailFast(HikariPool.java:576)
+	at com.zaxxer.hikari.pool.HikariPool.<init>(HikariPool.java:97)
+	at com.zaxxer.hikari.HikariDataSource.getConnection(HikariDataSource.java:111)
+	at org.hibernate.engine.jdbc.connections.internal.DataSourceConnectionProvider.getConnection(DataSourceConnectionProvider.java:137)
+	at org.hibernate.engine.jdbc.env.internal.JdbcEnvironmentInitiator$ConnectionProviderJdbcConnectionAccess.obtainConnection(JdbcEnvironmentInitiator.java:508)
+	at org.hibernate.resource.transaction.backend.jdbc.internal.JdbcIsolationDelegate.delegateWork(JdbcIsolationDelegate.java:48)
+	at org.hibernate.engine.jdbc.env.internal.JdbcEnvironmentInitiator.getJdbcEnvironmentUsingJdbcMetadata(JdbcEnvironmentInitiator.java:366)
+	at org.hibernate.engine.jdbc.env.internal.JdbcEnvironmentInitiator.getJdbcEnvironment(JdbcEnvironmentInitiator.java:143)
+	at org.hibernate.engine.jdbc.env.internal.JdbcEnvironmentInitiator.initiateService(JdbcEnvironmentInitiator.java:120)
+	at org.hibernate.engine.jdbc.env.internal.JdbcEnvironmentInitiator.initiateService(JdbcEnvironmentInitiator.java:80)
+	at org.hibernate.boot.registry.internal.StandardServiceRegistryImpl.initiateService(StandardServiceRegistryImpl.java:133)
+	at org.hibernate.service.internal.AbstractServiceRegistryImpl.createService(AbstractServiceRegistryImpl.java:260)
+	at org.hibernate.service.internal.AbstractServiceRegistryImpl.initializeService(AbstractServiceRegistryImpl.java:235)
+	at org.hibernate.service.internal.AbstractServiceRegistryImpl.getService(AbstractServiceRegistryImpl.java:212)
+	at org.hibernate.boot.model.relational.Database.<init>(Database.java:44)
+	at org.hibernate.boot.internal.InFlightMetadataCollectorImpl.getDatabase(InFlightMetadataCollectorImpl.java:251)
+	at org.hibernate.boot.internal.InFlightMetadataCollectorImpl.<init>(InFlightMetadataCollectorImpl.java:203)
+	at org.hibernate.boot.model.process.spi.MetadataBuildingProcess.complete(MetadataBuildingProcess.java:170)
+	at org.hibernate.jpa.boot.internal.EntityManagerFactoryBuilderImpl.metadata(EntityManagerFactoryBuilderImpl.java:1392)
+	at org.hibernate.jpa.boot.internal.EntityManagerFactoryBuilderImpl.populateSessionFactoryBuilder(EntityManagerFactoryBuilderImpl.java:1472)
+	at org.hibernate.jpa.boot.internal.EntityManagerFactoryBuilderImpl.build(EntityManagerFactoryBuilderImpl.java:1454)
+	at org.springframework.orm.jpa.vendor.SpringHibernateJpaPersistenceProvider.createContainerEntityManagerFactory(SpringHibernateJpaPersistenceProvider.java:93)
+	at org.springframework.orm.jpa.LocalContainerEntityManagerFactoryBean.createNativeEntityManagerFactory(LocalContainerEntityManagerFactoryBean.java:443)
+	at org.springframework.orm.jpa.AbstractEntityManagerFactoryBean.buildNativeEntityManagerFactory(AbstractEntityManagerFactoryBean.java:436)
+	at org.springframework.orm.jpa.AbstractEntityManagerFactoryBean.afterPropertiesSet(AbstractEntityManagerFactoryBean.java:411)
+	at org.springframework.orm.jpa.LocalContainerEntityManagerFactoryBean.afterPropertiesSet(LocalContainerEntityManagerFactoryBean.java:419)
+	at org.springframework.beans.factory.support.AbstractAutowireCapableBeanFactory.invokeInitMethods(AbstractAutowireCapableBeanFactory.java:1864)
+	at org.springframework.beans.factory.support.AbstractAutowireCapableBeanFactory.initializeBean(AbstractAutowireCapableBeanFactory.java:1813)
+	at org.springframework.beans.factory.support.AbstractAutowireCapableBeanFactory.doCreateBean(AbstractAutowireCapableBeanFactory.java:603)
+	at org.springframework.beans.factory.support.AbstractAutowireCapableBeanFactory.createBean(AbstractAutowireCapableBeanFactory.java:525)
+	at org.springframework.beans.factory.support.AbstractBeanFactory.lambda$doGetBean$0(AbstractBeanFactory.java:333)
+	at org.springframework.beans.factory.support.DefaultSingletonBeanRegistry.getSingleton(DefaultSingletonBeanRegistry.java:371)
+	at org.springframework.beans.factory.support.AbstractBeanFactory.doGetBean(AbstractBeanFactory.java:331)
+	at org.springframework.beans.factory.support.AbstractBeanFactory.getBean(AbstractBeanFactory.java:201)
+	at org.springframework.context.support.AbstractApplicationContext.finishBeanFactoryInitialization(AbstractApplicationContext.java:977)
+	at org.springframework.context.support.AbstractApplicationContext.refresh(AbstractApplicationContext.java:621)
+	at org.springframework.boot.web.server.servlet.context.ServletWebServerApplicationContext.refresh(ServletWebServerApplicationContext.java:143)
+	at org.springframework.boot.SpringApplication.refresh(SpringApplication.java:756)
+	at org.springframework.boot.SpringApplication.refreshContext(SpringApplication.java:445)
+	at org.springframework.boot.SpringApplication.run(SpringApplication.java:321)
+	at org.springframework.boot.SpringApplication.run(SpringApplication.java:1365)
+	at org.springframework.boot.SpringApplication.run(SpringApplication.java:1354)
+	at com.example.app.AppApplication.main(AppApplication.java:10)
+	at java.base/jdk.internal.reflect.DirectMethodHandleAccessor.invoke(DirectMethodHandleAccessor.java:103)
+	at java.base/java.lang.reflect.Method.invoke(Method.java:580)
+	at org.springframework.boot.devtools.restart.RestartLauncher.run(RestartLauncher.java:52)
+Caused by: org.h2.jdbc.JdbcSQLNonTransientException: General error: "org.h2.mvstore.MVStoreException: The file is locked: C:/Users/user/projects/גאבה/app/mydb.mv.db [2.4.240/7]" [50000-240]
+	at org.h2.message.DbException.getJdbcSQLException(DbException.java:566)
+	at org.h2.message.DbException.getJdbcSQLException(DbException.java:489)
+	... 65 more
+Caused by: org.h2.mvstore.MVStoreException: The file is locked: C:/Users/user/projects/גאבה/app/mydb.mv.db [2.4.240/7]
+	at org.h2.mvstore.DataUtils.newMVStoreException(DataUtils.java:996)
+	at org.h2.mvstore.SingleFileStore.lockFileChannel(SingleFileStore.java:143)
+	at org.h2.mvstore.SingleFileStore.open(SingleFileStore.java:117)
+	at org.h2.mvstore.SingleFileStore.open(SingleFileStore.java:81)
+	at org.h2.mvstore.MVStore.<init>(MVStore.java:291)
+	... 59 more
+2026-03-11 17:37:50.370351+02:00 database: flush
+org.h2.message.DbException: General error: "org.h2.mvstore.MVStoreException: The file is locked: C:/Users/user/projects/גאבה/app/mydb.mv.db [2.4.240/7]" [50000-240]
+	at org.h2.message.DbException.get(DbException.java:212)
+	at org.h2.message.DbException.convert(DbException.java:407)
+	at org.h2.mvstore.db.Store.lambda$new$0(Store.java:122)
+	at org.h2.mvstore.MVStore.handleException(MVStore.java:1675)
+	at org.h2.mvstore.MVStore.panic(MVStore.java:502)
+	at org.h2.mvstore.MVStore.<init>(MVStore.java:296)
+	at org.h2.mvstore.MVStore$Builder.open(MVStore.java:2164)
+	at org.h2.mvstore.db.Store.<init>(Store.java:133)
+	at org.h2.engine.Database.<init>(Database.java:328)
+	at org.h2.engine.Engine.openSession(Engine.java:92)
+	at org.h2.engine.Engine.openSession(Engine.java:222)
+	at org.h2.engine.Engine.createSession(Engine.java:201)
+	at org.h2.engine.SessionRemote.connectEmbeddedOrServer(SessionRemote.java:350)
+	at org.h2.jdbc.JdbcConnection.<init>(JdbcConnection.java:124)
+	at org.h2.Driver.connect(Driver.java:59)
+	at com.zaxxer.hikari.util.DriverDataSource.getConnection(DriverDataSource.java:144)
+	at com.zaxxer.hikari.pool.PoolBase.newConnection(PoolBase.java:373)
+	at com.zaxxer.hikari.pool.PoolBase.newPoolEntry(PoolBase.java:210)
+	at com.zaxxer.hikari.pool.HikariPool.createPoolEntry(HikariPool.java:488)
+	at com.zaxxer.hikari.pool.HikariPool.checkFailFast(HikariPool.java:576)
+	at com.zaxxer.hikari.pool.HikariPool.<init>(HikariPool.java:97)
+	at com.zaxxer.hikari.HikariDataSource.getConnection(HikariDataSource.java:111)
+	at org.hibernate.engine.jdbc.connections.internal.DataSourceConnectionProvider.getConnection(DataSourceConnectionProvider.java:137)
+	at org.hibernate.engine.jdbc.env.internal.JdbcEnvironmentInitiator$ConnectionProviderJdbcConnectionAccess.obtainConnection(JdbcEnvironmentInitiator.java:508)
+	at org.hibernate.resource.transaction.backend.jdbc.internal.JdbcIsolationDelegate.delegateWork(JdbcIsolationDelegate.java:48)
+	at org.hibernate.engine.jdbc.env.internal.JdbcEnvironmentInitiator.getJdbcEnvironmentUsingJdbcMetadata(JdbcEnvironmentInitiator.java:366)
+	at org.hibernate.engine.jdbc.env.internal.JdbcEnvironmentInitiator.getJdbcEnvironment(JdbcEnvironmentInitiator.java:143)
+	at org.hibernate.engine.jdbc.env.internal.JdbcEnvironmentInitiator.initiateService(JdbcEnvironmentInitiator.java:120)
+	at org.hibernate.engine.jdbc.env.internal.JdbcEnvironmentInitiator.initiateService(JdbcEnvironmentInitiator.java:80)
+	at org.hibernate.boot.registry.internal.StandardServiceRegistryImpl.initiateService(StandardServiceRegistryImpl.java:133)
+	at org.hibernate.service.internal.AbstractServiceRegistryImpl.createService(AbstractServiceRegistryImpl.java:260)
+	at org.hibernate.service.internal.AbstractServiceRegistryImpl.initializeService(AbstractServiceRegistryImpl.java:235)
+	at org.hibernate.service.internal.AbstractServiceRegistryImpl.getService(AbstractServiceRegistryImpl.java:212)
+	at org.hibernate.boot.model.relational.Database.<init>(Database.java:44)
+	at org.hibernate.boot.internal.InFlightMetadataCollectorImpl.getDatabase(InFlightMetadataCollectorImpl.java:251)
+	at org.hibernate.boot.internal.InFlightMetadataCollectorImpl.<init>(InFlightMetadataCollectorImpl.java:203)
+	at org.hibernate.boot.model.process.spi.MetadataBuildingProcess.complete(MetadataBuildingProcess.java:170)
+	at org.hibernate.jpa.boot.internal.EntityManagerFactoryBuilderImpl.metadata(EntityManagerFactoryBuilderImpl.java:1392)
+	at org.hibernate.jpa.boot.internal.EntityManagerFactoryBuilderImpl.populateSessionFactoryBuilder(EntityManagerFactoryBuilderImpl.java:1472)
+	at org.hibernate.jpa.boot.internal.EntityManagerFactoryBuilderImpl.build(EntityManagerFactoryBuilderImpl.java:1454)
+	at org.springframework.orm.jpa.vendor.SpringHibernateJpaPersistenceProvider.createContainerEntityManagerFactory(SpringHibernateJpaPersistenceProvider.java:93)
+	at org.springframework.orm.jpa.LocalContainerEntityManagerFactoryBean.createNativeEntityManagerFactory(LocalContainerEntityManagerFactoryBean.java:443)
+	at org.springframework.orm.jpa.AbstractEntityManagerFactoryBean.buildNativeEntityManagerFactory(AbstractEntityManagerFactoryBean.java:436)
+	at org.springframework.orm.jpa.AbstractEntityManagerFactoryBean.afterPropertiesSet(AbstractEntityManagerFactoryBean.java:411)
+	at org.springframework.orm.jpa.LocalContainerEntityManagerFactoryBean.afterPropertiesSet(LocalContainerEntityManagerFactoryBean.java:419)
+	at org.springframework.beans.factory.support.AbstractAutowireCapableBeanFactory.invokeInitMethods(AbstractAutowireCapableBeanFactory.java:1864)
+	at org.springframework.beans.factory.support.AbstractAutowireCapableBeanFactory.initializeBean(AbstractAutowireCapableBeanFactory.java:1813)
+	at org.springframework.beans.factory.support.AbstractAutowireCapableBeanFactory.doCreateBean(AbstractAutowireCapableBeanFactory.java:603)
+	at org.springframework.beans.factory.support.AbstractAutowireCapableBeanFactory.createBean(AbstractAutowireCapableBeanFactory.java:525)
+	at org.springframework.beans.factory.support.AbstractBeanFactory.lambda$doGetBean$0(AbstractBeanFactory.java:333)
+	at org.springframework.beans.factory.support.DefaultSingletonBeanRegistry.getSingleton(DefaultSingletonBeanRegistry.java:371)
+	at org.springframework.beans.factory.support.AbstractBeanFactory.doGetBean(AbstractBeanFactory.java:331)
+	at org.springframework.beans.factory.support.AbstractBeanFactory.getBean(AbstractBeanFactory.java:201)
+	at org.springframework.context.support.AbstractApplicationContext.finishBeanFactoryInitialization(AbstractApplicationContext.java:977)
+	at org.springframework.context.support.AbstractApplicationContext.refresh(AbstractApplicationContext.java:621)
+	at org.springframework.boot.web.server.servlet.context.ServletWebServerApplicationContext.refresh(ServletWebServerApplicationContext.java:143)
+	at org.springframework.boot.SpringApplication.refresh(SpringApplication.java:756)
+	at org.springframework.boot.SpringApplication.refreshContext(SpringApplication.java:445)
+	at org.springframework.boot.SpringApplication.run(SpringApplication.java:321)
+	at org.springframework.boot.SpringApplication.run(SpringApplication.java:1365)
+	at org.springframework.boot.SpringApplication.run(SpringApplication.java:1354)
+	at com.example.app.AppApplication.main(AppApplication.java:10)
+	at java.base/jdk.internal.reflect.DirectMethodHandleAccessor.invoke(DirectMethodHandleAccessor.java:103)
+	at java.base/java.lang.reflect.Method.invoke(Method.java:580)
+	at org.springframework.boot.devtools.restart.RestartLauncher.run(RestartLauncher.java:52)
+Caused by: org.h2.jdbc.JdbcSQLNonTransientException: General error: "org.h2.mvstore.MVStoreException: The file is locked: C:/Users/user/projects/גאבה/app/mydb.mv.db [2.4.240/7]" [50000-240]
+	at org.h2.message.DbException.getJdbcSQLException(DbException.java:566)
+	at org.h2.message.DbException.getJdbcSQLException(DbException.java:489)
+	... 65 more
+Caused by: org.h2.mvstore.MVStoreException: The file is locked: C:/Users/user/projects/גאבה/app/mydb.mv.db [2.4.240/7]
+	at org.h2.mvstore.DataUtils.newMVStoreException(DataUtils.java:996)
+	at org.h2.mvstore.SingleFileStore.lockFileChannel(SingleFileStore.java:143)
+	at org.h2.mvstore.SingleFileStore.open(SingleFileStore.java:117)
+	at org.h2.mvstore.SingleFileStore.open(SingleFileStore.java:81)
+	at org.h2.mvstore.MVStore.<init>(MVStore.java:291)
+	... 59 more
+2026-03-11 17:43:48.164262+02:00 jdbc[13]: exception
+org.h2.jdbc.JdbcSQLSyntaxErrorException: Column "PAGECOUNT" not found; SQL statement:
+INSERT INTO BOOK (ID, TITLE, AUTHOR, SUMMARY, PAGECOUNT, CATEGORY_ID) 
+VALUES (1, 'Spring in Action', 'Craig Walls', 'Guide to Spring Framework', 450, 1) [42122-240]
+	at org.h2.message.DbException.getJdbcSQLException(DbException.java:514)
+	at org.h2.message.DbException.getJdbcSQLException(DbException.java:489)
+	at org.h2.message.DbException.get(DbException.java:223)
+	at org.h2.message.DbException.get(DbException.java:199)
+	at org.h2.table.Table.getColumn(Table.java:778)
+	at org.h2.command.Parser.parseColumn(Parser.java:1174)
+	at org.h2.command.Parser.parseColumnList(Parser.java:1159)
+	at org.h2.command.Parser.parseInsert(Parser.java:1533)
+	at org.h2.command.Parser.parsePrepared(Parser.java:701)
+	at org.h2.command.Parser.parse(Parser.java:584)
+	at org.h2.command.Parser.parse(Parser.java:559)
+	at org.h2.command.Parser.prepareCommand(Parser.java:487)
+	at org.h2.engine.SessionLocal.prepareLocal(SessionLocal.java:647)
+	at org.h2.engine.SessionLocal.prepareCommand(SessionLocal.java:563)
+	at org.h2.jdbc.JdbcConnection.prepareCommand(JdbcConnection.java:1160)
+	at org.h2.jdbc.JdbcStatement.executeInternal(JdbcStatement.java:245)
+	at org.h2.jdbc.JdbcStatement.execute(JdbcStatement.java:231)
+	at org.h2.server.web.WebApp.getResult(WebApp.java:1344)
+	at org.h2.server.web.WebApp.query(WebApp.java:1142)
+	at org.h2.server.web.WebApp.query(WebApp.java:1118)
+	at org.h2.server.web.WebApp.process(WebApp.java:244)
+	at org.h2.server.web.WebApp.processRequest(WebApp.java:176)
+	at org.h2.server.web.JakartaWebServlet.doGet(JakartaWebServlet.java:129)
+	at org.h2.server.web.JakartaWebServlet.doPost(JakartaWebServlet.java:166)
+	at jakarta.servlet.http.HttpServlet.service(HttpServlet.java:653)
+	at jakarta.servlet.http.HttpServlet.service(HttpServlet.java:723)
+	at org.apache.catalina.core.ApplicationFilterChain.doFilter(ApplicationFilterChain.java:128)
+	at org.apache.tomcat.websocket.server.WsFilter.doFilter(WsFilter.java:53)
+	at org.apache.catalina.core.ApplicationFilterChain.doFilter(ApplicationFilterChain.java:107)
+	at org.springframework.web.filter.RequestContextFilter.doFilterInternal(RequestContextFilter.java:100)
+	at org.springframework.web.filter.OncePerRequestFilter.doFilter(OncePerRequestFilter.java:116)
+	at org.apache.catalina.core.ApplicationFilterChain.doFilter(ApplicationFilterChain.java:107)
+	at org.springframework.web.filter.FormContentFilter.doFilterInternal(FormContentFilter.java:93)
+	at org.springframework.web.filter.OncePerRequestFilter.doFilter(OncePerRequestFilter.java:116)
+	at org.apache.catalina.core.ApplicationFilterChain.doFilter(ApplicationFilterChain.java:107)
+	at org.springframework.web.filter.CharacterEncodingFilter.doFilterInternal(CharacterEncodingFilter.java:199)
+	at org.springframework.web.filter.OncePerRequestFilter.doFilter(OncePerRequestFilter.java:116)
+	at org.apache.catalina.core.ApplicationFilterChain.doFilter(ApplicationFilterChain.java:107)
+	at org.apache.catalina.core.StandardWrapperValve.invoke(StandardWrapperValve.java:165)
+	at org.apache.catalina.core.StandardContextValve.invoke(StandardContextValve.java:77)
+	at org.apache.catalina.authenticator.AuthenticatorBase.invoke(AuthenticatorBase.java:492)
+	at org.apache.catalina.core.StandardHostValve.invoke(StandardHostValve.java:113)
+	at org.apache.catalina.valves.ErrorReportValve.invoke(ErrorReportValve.java:83)
+	at org.apache.catalina.core.StandardEngineValve.invoke(StandardEngineValve.java:72)
+	at org.apache.catalina.connector.CoyoteAdapter.service(CoyoteAdapter.java:341)
+	at org.apache.coyote.http11.Http11Processor.service(Http11Processor.java:397)
+	at org.apache.coyote.AbstractProcessorLight.process(AbstractProcessorLight.java:63)
+	at org.apache.coyote.AbstractProtocol$ConnectionHandler.process(AbstractProtocol.java:903)
+	at org.apache.tomcat.util.net.NioEndpoint$SocketProcessor.doRun(NioEndpoint.java:1779)
+	at org.apache.tomcat.util.net.SocketProcessorBase.run(SocketProcessorBase.java:52)
+	at org.apache.tomcat.util.threads.ThreadPoolExecutor.runWorker(ThreadPoolExecutor.java:946)
+	at org.apache.tomcat.util.threads.ThreadPoolExecutor$Worker.run(ThreadPoolExecutor.java:480)
+	at org.apache.tomcat.util.threads.TaskThread$WrappingRunnable.run(TaskThread.java:57)
+	at java.base/java.lang.Thread.run(Thread.java:1583)
+2026-03-11 17:46:16.515425+02:00 jdbc[13]: exception
+org.h2.jdbc.JdbcSQLSyntaxErrorException: Column "PAGECOUNT" not found; SQL statement:
+INSERT INTO BOOK (ID, TITLE, AUTHOR, SUMMARY, PAGECOUNT, CATEGORY_ID) 
+VALUES (1, 'Spring in Action', 'Craig Walls', 'Guide to Spring Framework', 450, 1) [42122-240]
+	at org.h2.message.DbException.getJdbcSQLException(DbException.java:514)
+	at org.h2.message.DbException.getJdbcSQLException(DbException.java:489)
+	at org.h2.message.DbException.get(DbException.java:223)
+	at org.h2.message.DbException.get(DbException.java:199)
+	at org.h2.table.Table.getColumn(Table.java:778)
+	at org.h2.command.Parser.parseColumn(Parser.java:1174)
+	at org.h2.command.Parser.parseColumnList(Parser.java:1159)
+	at org.h2.command.Parser.parseInsert(Parser.java:1533)
+	at org.h2.command.Parser.parsePrepared(Parser.java:701)
+	at org.h2.command.Parser.parse(Parser.java:584)
+	at org.h2.command.Parser.parse(Parser.java:559)
+	at org.h2.command.Parser.prepareCommand(Parser.java:487)
+	at org.h2.engine.SessionLocal.prepareLocal(SessionLocal.java:647)
+	at org.h2.engine.SessionLocal.prepareCommand(SessionLocal.java:563)
+	at org.h2.jdbc.JdbcConnection.prepareCommand(JdbcConnection.java:1160)
+	at org.h2.jdbc.JdbcStatement.executeInternal(JdbcStatement.java:245)
+	at org.h2.jdbc.JdbcStatement.execute(JdbcStatement.java:231)
+	at org.h2.server.web.WebApp.getResult(WebApp.java:1344)
+	at org.h2.server.web.WebApp.query(WebApp.java:1142)
+	at org.h2.server.web.WebApp.query(WebApp.java:1118)
+	at org.h2.server.web.WebApp.process(WebApp.java:244)
+	at org.h2.server.web.WebApp.processRequest(WebApp.java:176)
+	at org.h2.server.web.JakartaWebServlet.doGet(JakartaWebServlet.java:129)
+	at org.h2.server.web.JakartaWebServlet.doPost(JakartaWebServlet.java:166)
+	at jakarta.servlet.http.HttpServlet.service(HttpServlet.java:653)
+	at jakarta.servlet.http.HttpServlet.service(HttpServlet.java:723)
+	at org.apache.catalina.core.ApplicationFilterChain.doFilter(ApplicationFilterChain.java:128)
+	at org.apache.tomcat.websocket.server.WsFilter.doFilter(WsFilter.java:53)
+	at org.apache.catalina.core.ApplicationFilterChain.doFilter(ApplicationFilterChain.java:107)
+	at org.springframework.web.filter.RequestContextFilter.doFilterInternal(RequestContextFilter.java:100)
+	at org.springframework.web.filter.OncePerRequestFilter.doFilter(OncePerRequestFilter.java:116)
+	at org.apache.catalina.core.ApplicationFilterChain.doFilter(ApplicationFilterChain.java:107)
+	at org.springframework.web.filter.FormContentFilter.doFilterInternal(FormContentFilter.java:93)
+	at org.springframework.web.filter.OncePerRequestFilter.doFilter(OncePerRequestFilter.java:116)
+	at org.apache.catalina.core.ApplicationFilterChain.doFilter(ApplicationFilterChain.java:107)
+	at org.springframework.web.filter.CharacterEncodingFilter.doFilterInternal(CharacterEncodingFilter.java:199)
+	at org.springframework.web.filter.OncePerRequestFilter.doFilter(OncePerRequestFilter.java:116)
+	at org.apache.catalina.core.ApplicationFilterChain.doFilter(ApplicationFilterChain.java:107)
+	at org.apache.catalina.core.StandardWrapperValve.invoke(StandardWrapperValve.java:165)
+	at org.apache.catalina.core.StandardContextValve.invoke(StandardContextValve.java:77)
+	at org.apache.catalina.authenticator.AuthenticatorBase.invoke(AuthenticatorBase.java:492)
+	at org.apache.catalina.core.StandardHostValve.invoke(StandardHostValve.java:113)
+	at org.apache.catalina.valves.ErrorReportValve.invoke(ErrorReportValve.java:83)
+	at org.apache.catalina.core.StandardEngineValve.invoke(StandardEngineValve.java:72)
+	at org.apache.catalina.connector.CoyoteAdapter.service(CoyoteAdapter.java:341)
+	at org.apache.coyote.http11.Http11Processor.service(Http11Processor.java:397)
+	at org.apache.coyote.AbstractProcessorLight.process(AbstractProcessorLight.java:63)
+	at org.apache.coyote.AbstractProtocol$ConnectionHandler.process(AbstractProtocol.java:903)
+	at org.apache.tomcat.util.net.NioEndpoint$SocketProcessor.doRun(NioEndpoint.java:1779)
+	at org.apache.tomcat.util.net.SocketProcessorBase.run(SocketProcessorBase.java:52)
+	at org.apache.tomcat.util.threads.ThreadPoolExecutor.runWorker(ThreadPoolExecutor.java:946)
+	at org.apache.tomcat.util.threads.ThreadPoolExecutor$Worker.run(ThreadPoolExecutor.java:480)
+	at org.apache.tomcat.util.threads.TaskThread$WrappingRunnable.run(TaskThread.java:57)
+	at java.base/java.lang.Thread.run(Thread.java:1583)
+2026-03-12 15:35:05.984615+02:00 jdbc[136]: exception
+org.h2.jdbc.JdbcSQLSyntaxErrorException: Syntax error in SQL statement "INSERT INTO COMMENT (ID,CONTENT,DATE,AUTHOR_ID,BOOK_ID)\000d\000aVALUES\000d\000a(1, 'Fascinating!','2026-03-12',2,2),\000d\000a(2, 'Fascinating and interesting!','2026-03-12',1,2),[*]"; expected "ROW (, (, DEFAULT, INTERSECTS (, NOT, EXISTS, UNIQUE, INTERSECTS"; SQL statement:
+INSERT INTO COMMENT (ID,CONTENT,DATE,AUTHOR_ID,BOOK_ID)
+VALUES
+(1, 'Fascinating!','2026-03-12',2,2),
+(2, 'Fascinating and interesting!','2026-03-12',1,2), [42001-240]
+2026-03-15 23:13:15.226692+02:00 jdbc[13]: exception
+org.h2.jdbc.JdbcSQLSyntaxErrorException: Syntax error in SQL statement "SELECT * FROM BOOK CATEGORY [*]COMMENT LEND USERS"; SQL statement:
+SELECT * FROM BOOK CATEGORY COMMENT LEND USERS [42000-240]
+2026-03-15 23:14:54.795938+02:00 jdbc[13]: exception
+org.h2.jdbc.JdbcSQLSyntaxErrorException: Syntax error in SQL statement "SELECT * FROM \000d\000a[*]10COMMENT"; expected "identifier"; SQL statement:
+SELECT * FROM 
+10COMMENT [42001-240]
+2026-03-15 23:16:58.171569+02:00 jdbc[13]: exception
+org.h2.jdbc.JdbcSQLSyntaxErrorException: Syntax error in SQL statement "SELECT * FROM COMMENT \000d\000a[*]SELECT * FROM BOOK\000d\000aSELECT * FROM CATEGORY\000d\000aSELECT * FROM COMMENT\000d\000aSELECT * FROM LEND"; SQL statement:
+SELECT * FROM COMMENT 
+SELECT * FROM BOOK
+SELECT * FROM CATEGORY
+SELECT * FROM COMMENT
+SELECT * FROM LEND [42000-240]
+2026-03-16 15:09:24.451128+02:00 jdbc[23]: exception
+org.h2.jdbc.JdbcSQLSyntaxErrorException: Table "HTE_COMMENT" already exists; SQL statement:
+create global temporary table HTE_comment(date date, rn_ integer not null, book_id bigint, id bigint, user_id bigint, content varchar(255), primary key (rn_)) transactional [42101-240]
+2026-03-16 15:09:24.471114+02:00 jdbc[23]: exception
+org.h2.jdbc.JdbcSQLSyntaxErrorException: Table "HTE_LEND" already exists; SQL statement:
+create global temporary table HTE_lend(lendingDate date, returnDate date, rn_ integer not null, book_id bigint, id bigint, user_id bigint, primary key (rn_)) transactional [42101-240]
+2026-03-16 15:09:24.473114+02:00 jdbc[23]: exception
+org.h2.jdbc.JdbcSQLSyntaxErrorException: Table "HTE_BOOK" already exists; SQL statement:
+create global temporary table HTE_book(pageCount integer, rn_ integer not null, category_id bigint, id bigint, author varchar(255), image varchar(255), summary varchar(255), title varchar(255), primary key (rn_)) transactional [42101-240]
+2026-03-16 15:09:24.474201+02:00 jdbc[23]: exception
+org.h2.jdbc.JdbcSQLSyntaxErrorException: Table "HTE_CATEGORY" already exists; SQL statement:
+create global temporary table HTE_category(rn_ integer not null, id bigint, color varchar(255), description varchar(255), name varchar(255), primary key (rn_)) transactional [42101-240]
+2026-03-16 15:16:16.406458+02:00 jdbc[33]: exception
+org.h2.jdbc.JdbcSQLSyntaxErrorException: Table "HTE_COMMENT" already exists; SQL statement:
+create global temporary table HTE_comment(date date, rn_ integer not null, book_id bigint, id bigint, user_id bigint, content varchar(255), primary key (rn_)) transactional [42101-240]
+2026-03-16 15:16:16.408469+02:00 jdbc[33]: exception
+org.h2.jdbc.JdbcSQLSyntaxErrorException: Table "HTE_LEND" already exists; SQL statement:
+create global temporary table HTE_lend(lendingDate date, returnDate date, rn_ integer not null, book_id bigint, id bigint, user_id bigint, primary key (rn_)) transactional [42101-240]
+2026-03-16 15:16:16.409468+02:00 jdbc[33]: exception
+org.h2.jdbc.JdbcSQLSyntaxErrorException: Table "HTE_BOOK" already exists; SQL statement:
+create global temporary table HTE_book(pageCount integer, rn_ integer not null, category_id bigint, id bigint, author varchar(255), image varchar(255), summary varchar(255), title varchar(255), primary key (rn_)) transactional [42101-240]
+2026-03-16 15:16:16.410468+02:00 jdbc[33]: exception
+org.h2.jdbc.JdbcSQLSyntaxErrorException: Table "HTE_CATEGORY" already exists; SQL statement:
+create global temporary table HTE_category(rn_ integer not null, id bigint, color varchar(255), description varchar(255), name varchar(255), primary key (rn_)) transactional [42101-240]
+2026-03-16 15:16:18.653516+02:00 jdbc[43]: exception
+org.h2.jdbc.JdbcSQLSyntaxErrorException: Table "HTE_COMMENT" already exists; SQL statement:
+create global temporary table HTE_comment(date date, rn_ integer not null, book_id bigint, id bigint, user_id bigint, content varchar(255), primary key (rn_)) transactional [42101-240]
+2026-03-16 15:16:18.655020+02:00 jdbc[43]: exception
+org.h2.jdbc.JdbcSQLSyntaxErrorException: Table "HTE_LEND" already exists; SQL statement:
+create global temporary table HTE_lend(lendingDate date, returnDate date, rn_ integer not null, book_id bigint, id bigint, user_id bigint, primary key (rn_)) transactional [42101-240]
+2026-03-16 15:16:18.656531+02:00 jdbc[43]: exception
+org.h2.jdbc.JdbcSQLSyntaxErrorException: Table "HTE_BOOK" already exists; SQL statement:
+create global temporary table HTE_book(pageCount integer, rn_ integer not null, category_id bigint, id bigint, author varchar(255), image varchar(255), summary varchar(255), title varchar(255), primary key (rn_)) transactional [42101-240]
+2026-03-16 15:16:18.657546+02:00 jdbc[43]: exception
+org.h2.jdbc.JdbcSQLSyntaxErrorException: Table "HTE_CATEGORY" already exists; SQL statement:
+create global temporary table HTE_category(rn_ integer not null, id bigint, color varchar(255), description varchar(255), name varchar(255), primary key (rn_)) transactional [42101-240]
+2026-03-16 15:23:00.255029+02:00 jdbc[53]: exception
+org.h2.jdbc.JdbcSQLSyntaxErrorException: Table "HTE_COMMENT" already exists; SQL statement:
+create global temporary table HTE_comment(date date, rn_ integer not null, book_id bigint, id bigint, user_id bigint, content varchar(255), primary key (rn_)) transactional [42101-240]
+2026-03-16 15:23:00.257387+02:00 jdbc[53]: exception
+org.h2.jdbc.JdbcSQLSyntaxErrorException: Table "HTE_LEND" already exists; SQL statement:
+create global temporary table HTE_lend(lendingDate date, returnDate date, rn_ integer not null, book_id bigint, id bigint, user_id bigint, primary key (rn_)) transactional [42101-240]
+2026-03-16 15:23:00.257387+02:00 jdbc[53]: exception
+org.h2.jdbc.JdbcSQLSyntaxErrorException: Table "HTE_BOOK" already exists; SQL statement:
+create global temporary table HTE_book(pageCount integer, rn_ integer not null, category_id bigint, id bigint, author varchar(255), image varchar(255), summary varchar(255), title varchar(255), primary key (rn_)) transactional [42101-240]
+2026-03-16 15:23:00.260925+02:00 jdbc[53]: exception
+org.h2.jdbc.JdbcSQLSyntaxErrorException: Table "HTE_CATEGORY" already exists; SQL statement:
+create global temporary table HTE_category(rn_ integer not null, id bigint, color varchar(255), description varchar(255), name varchar(255), primary key (rn_)) transactional [42101-240]
+2026-03-16 15:23:02.734553+02:00 jdbc[63]: exception
+org.h2.jdbc.JdbcSQLSyntaxErrorException: Table "HTE_COMMENT" already exists; SQL statement:
+create global temporary table HTE_comment(date date, rn_ integer not null, book_id bigint, id bigint, user_id bigint, content varchar(255), primary key (rn_)) transactional [42101-240]
+2026-03-16 15:23:02.737062+02:00 jdbc[63]: exception
+org.h2.jdbc.JdbcSQLSyntaxErrorException: Table "HTE_LEND" already exists; SQL statement:
+create global temporary table HTE_lend(lendingDate date, returnDate date, rn_ integer not null, book_id bigint, id bigint, user_id bigint, primary key (rn_)) transactional [42101-240]
+2026-03-16 15:23:02.737062+02:00 jdbc[63]: exception
+org.h2.jdbc.JdbcSQLSyntaxErrorException: Table "HTE_BOOK" already exists; SQL statement:
+create global temporary table HTE_book(pageCount integer, rn_ integer not null, category_id bigint, id bigint, author varchar(255), image varchar(255), summary varchar(255), title varchar(255), primary key (rn_)) transactional [42101-240]
+2026-03-16 15:23:02.737062+02:00 jdbc[63]: exception
+org.h2.jdbc.JdbcSQLSyntaxErrorException: Table "HTE_CATEGORY" already exists; SQL statement:
+create global temporary table HTE_category(rn_ integer not null, id bigint, color varchar(255), description varchar(255), name varchar(255), primary key (rn_)) transactional [42101-240]
+2026-03-16 16:33:34.043550+02:00 jdbc[13]: exception
+org.h2.jdbc.JdbcSQLSyntaxErrorException: Table "HTE_COMMENT" already exists; SQL statement:
+create global temporary table HTE_comment(date date, rn_ integer not null, book_id bigint, id bigint, user_id bigint, content varchar(255), primary key (rn_)) transactional [42101-240]
+2026-03-16 16:33:34.048594+02:00 jdbc[13]: exception
+org.h2.jdbc.JdbcSQLSyntaxErrorException: Table "HTE_LEND" already exists; SQL statement:
+create global temporary table HTE_lend(lendingDate date, returnDate date, rn_ integer not null, book_id bigint, id bigint, user_id bigint, primary key (rn_)) transactional [42101-240]
+2026-03-16 16:33:34.050552+02:00 jdbc[13]: exception
+org.h2.jdbc.JdbcSQLSyntaxErrorException: Table "HTE_BOOK" already exists; SQL statement:
+create global temporary table HTE_book(pageCount integer, rn_ integer not null, category_id bigint, id bigint, author varchar(255), image varchar(255), summary varchar(255), title varchar(255), primary key (rn_)) transactional [42101-240]
+2026-03-16 16:33:34.051581+02:00 jdbc[13]: exception
+org.h2.jdbc.JdbcSQLSyntaxErrorException: Table "HTE_CATEGORY" already exists; SQL statement:
+create global temporary table HTE_category(rn_ integer not null, id bigint, color varchar(255), description varchar(255), name varchar(255), primary key (rn_)) transactional [42101-240]
+2026-03-16 16:33:36.279341+02:00 jdbc[23]: exception
+org.h2.jdbc.JdbcSQLSyntaxErrorException: Table "HTE_COMMENT" already exists; SQL statement:
+create global temporary table HTE_comment(date date, rn_ integer not null, book_id bigint, id bigint, user_id bigint, content varchar(255), primary key (rn_)) transactional [42101-240]
+2026-03-16 16:33:36.280330+02:00 jdbc[23]: exception
+org.h2.jdbc.JdbcSQLSyntaxErrorException: Table "HTE_LEND" already exists; SQL statement:
+create global temporary table HTE_lend(lendingDate date, returnDate date, rn_ integer not null, book_id bigint, id bigint, user_id bigint, primary key (rn_)) transactional [42101-240]
+2026-03-16 16:33:36.282326+02:00 jdbc[23]: exception
+org.h2.jdbc.JdbcSQLSyntaxErrorException: Table "HTE_BOOK" already exists; SQL statement:
+create global temporary table HTE_book(pageCount integer, rn_ integer not null, category_id bigint, id bigint, author varchar(255), image varchar(255), summary varchar(255), title varchar(255), primary key (rn_)) transactional [42101-240]
+2026-03-16 16:33:36.283322+02:00 jdbc[23]: exception
+org.h2.jdbc.JdbcSQLSyntaxErrorException: Table "HTE_CATEGORY" already exists; SQL statement:
+create global temporary table HTE_category(rn_ integer not null, id bigint, color varchar(255), description varchar(255), name varchar(255), primary key (rn_)) transactional [42101-240]
+2026-03-16 16:33:56.602257+02:00 jdbc[33]: exception
+org.h2.jdbc.JdbcSQLSyntaxErrorException: Table "HTE_COMMENT" already exists; SQL statement:
+create global temporary table HTE_comment(date date, rn_ integer not null, book_id bigint, id bigint, user_id bigint, content varchar(255), primary key (rn_)) transactional [42101-240]
+2026-03-16 16:33:56.603315+02:00 jdbc[33]: exception
+org.h2.jdbc.JdbcSQLSyntaxErrorException: Table "HTE_LEND" already exists; SQL statement:
+create global temporary table HTE_lend(lendingDate date, returnDate date, rn_ integer not null, book_id bigint, id bigint, user_id bigint, primary key (rn_)) transactional [42101-240]
+2026-03-16 16:33:56.604270+02:00 jdbc[33]: exception
+org.h2.jdbc.JdbcSQLSyntaxErrorException: Table "HTE_BOOK" already exists; SQL statement:
+create global temporary table HTE_book(pageCount integer, rn_ integer not null, category_id bigint, id bigint, author varchar(255), image varchar(255), summary varchar(255), title varchar(255), primary key (rn_)) transactional [42101-240]
+2026-03-16 16:33:56.605262+02:00 jdbc[33]: exception
+org.h2.jdbc.JdbcSQLSyntaxErrorException: Table "HTE_CATEGORY" already exists; SQL statement:
+create global temporary table HTE_category(rn_ integer not null, id bigint, color varchar(255), description varchar(255), name varchar(255), primary key (rn_)) transactional [42101-240]
+2026-03-16 16:33:59.654726+02:00 jdbc[43]: exception
+org.h2.jdbc.JdbcSQLSyntaxErrorException: Table "HTE_COMMENT" already exists; SQL statement:
+create global temporary table HTE_comment(date date, rn_ integer not null, book_id bigint, id bigint, user_id bigint, content varchar(255), primary key (rn_)) transactional [42101-240]
+2026-03-16 16:33:59.655724+02:00 jdbc[43]: exception
+org.h2.jdbc.JdbcSQLSyntaxErrorException: Table "HTE_LEND" already exists; SQL statement:
+create global temporary table HTE_lend(lendingDate date, returnDate date, rn_ integer not null, book_id bigint, id bigint, user_id bigint, primary key (rn_)) transactional [42101-240]
+2026-03-16 16:33:59.656729+02:00 jdbc[43]: exception
+org.h2.jdbc.JdbcSQLSyntaxErrorException: Table "HTE_BOOK" already exists; SQL statement:
+create global temporary table HTE_book(pageCount integer, rn_ integer not null, category_id bigint, id bigint, author varchar(255), image varchar(255), summary varchar(255), title varchar(255), primary key (rn_)) transactional [42101-240]
+2026-03-16 16:33:59.656729+02:00 jdbc[43]: exception
+org.h2.jdbc.JdbcSQLSyntaxErrorException: Table "HTE_CATEGORY" already exists; SQL statement:
+create global temporary table HTE_category(rn_ integer not null, id bigint, color varchar(255), description varchar(255), name varchar(255), primary key (rn_)) transactional [42101-240]
+2026-03-16 16:41:55.584393+02:00 jdbc[53]: exception
+org.h2.jdbc.JdbcSQLSyntaxErrorException: Syntax error in SQL statement "SHOW [*]CREATE TABLE users"; SQL statement:
+SHOW CREATE TABLE users [42000-240]
+2026-03-16 16:42:11.167405+02:00 jdbc[53]: exception
+org.h2.jdbc.JdbcSQLSyntaxErrorException: Syntax error in SQL statement "SHOW [*]CREATE TABLE users"; SQL statement:
+SHOW CREATE TABLE users [42000-240]
+2026-03-16 16:52:52.303895+02:00 jdbc[13]: exception
+org.h2.jdbc.JdbcSQLSyntaxErrorException: Syntax error in SQL statement "SELECT * FROM USERS \000d\000aALTER [*]TABLE users ALTER COLUMN id RESTART WITH 7"; SQL statement:
+SELECT * FROM USERS 
+ALTER TABLE users ALTER COLUMN id RESTART WITH 7 [42000-240]
+2026-03-16 17:01:15.836959+02:00 jdbc[14]: exception
+org.h2.jdbc.JdbcSQLSyntaxErrorException: Table "HTE_COMMENT" already exists; SQL statement:
+create global temporary table HTE_comment(date date, rn_ integer not null, book_id bigint, id bigint, user_id bigint, content varchar(255), primary key (rn_)) transactional [42101-240]
+2026-03-16 17:01:15.838975+02:00 jdbc[14]: exception
+org.h2.jdbc.JdbcSQLSyntaxErrorException: Table "HTE_LEND" already exists; SQL statement:
+create global temporary table HTE_lend(lendingDate date, returnDate date, rn_ integer not null, book_id bigint, id bigint, user_id bigint, primary key (rn_)) transactional [42101-240]
+2026-03-16 17:01:15.838975+02:00 jdbc[14]: exception
+org.h2.jdbc.JdbcSQLSyntaxErrorException: Table "HTE_BOOK" already exists; SQL statement:
+create global temporary table HTE_book(pageCount integer, rn_ integer not null, category_id bigint, id bigint, author varchar(255), image varchar(255), summary varchar(255), title varchar(255), primary key (rn_)) transactional [42101-240]
+2026-03-16 17:01:15.838975+02:00 jdbc[14]: exception
+org.h2.jdbc.JdbcSQLSyntaxErrorException: Table "HTE_CATEGORY" already exists; SQL statement:
+create global temporary table HTE_category(rn_ integer not null, id bigint, color varchar(255), description varchar(255), name varchar(255), primary key (rn_)) transactional [42101-240]
+2026-03-16 17:01:18.509072+02:00 jdbc[24]: exception
+org.h2.jdbc.JdbcSQLSyntaxErrorException: Table "HTE_COMMENT" already exists; SQL statement:
+create global temporary table HTE_comment(date date, rn_ integer not null, book_id bigint, id bigint, user_id bigint, content varchar(255), primary key (rn_)) transactional [42101-240]
+2026-03-16 17:01:18.518816+02:00 jdbc[24]: exception
+org.h2.jdbc.JdbcSQLSyntaxErrorException: Table "HTE_LEND" already exists; SQL statement:
+create global temporary table HTE_lend(lendingDate date, returnDate date, rn_ integer not null, book_id bigint, id bigint, user_id bigint, primary key (rn_)) transactional [42101-240]
+2026-03-16 17:01:18.518816+02:00 jdbc[24]: exception
+org.h2.jdbc.JdbcSQLSyntaxErrorException: Table "HTE_BOOK" already exists; SQL statement:
+create global temporary table HTE_book(pageCount integer, rn_ integer not null, category_id bigint, id bigint, author varchar(255), image varchar(255), summary varchar(255), title varchar(255), primary key (rn_)) transactional [42101-240]
+2026-03-16 17:01:18.518816+02:00 jdbc[24]: exception
+org.h2.jdbc.JdbcSQLSyntaxErrorException: Table "HTE_CATEGORY" already exists; SQL statement:
+create global temporary table HTE_category(rn_ integer not null, id bigint, color varchar(255), description varchar(255), name varchar(255), primary key (rn_)) transactional [42101-240]
+2026-03-16 17:54:21.676808+02:00 jdbc[53]: exception
+org.h2.jdbc.JdbcSQLSyntaxErrorException: Table "HTE_COMMENT" already exists; SQL statement:
+create global temporary table HTE_comment(date date, rn_ integer not null, book_id bigint, id bigint, user_id bigint, content varchar(255), primary key (rn_)) transactional [42101-240]
+2026-03-16 17:54:21.688455+02:00 jdbc[53]: exception
+org.h2.jdbc.JdbcSQLSyntaxErrorException: Table "HTE_LEND" already exists; SQL statement:
+create global temporary table HTE_lend(lendingDate date, returnDate date, rn_ integer not null, book_id bigint, id bigint, user_id bigint, primary key (rn_)) transactional [42101-240]
+2026-03-16 17:54:21.688455+02:00 jdbc[53]: exception
+org.h2.jdbc.JdbcSQLSyntaxErrorException: Table "HTE_BOOK" already exists; SQL statement:
+create global temporary table HTE_book(pageCount integer, rn_ integer not null, category_id bigint, id bigint, author varchar(255), image varchar(255), summary varchar(255), title varchar(255), primary key (rn_)) transactional [42101-240]
+2026-03-16 17:54:21.688455+02:00 jdbc[53]: exception
+org.h2.jdbc.JdbcSQLSyntaxErrorException: Table "HTE_CATEGORY" already exists; SQL statement:
+create global temporary table HTE_category(rn_ integer not null, id bigint, color varchar(255), description varchar(255), name varchar(255), primary key (rn_)) transactional [42101-240]
+2026-03-16 17:54:24.534161+02:00 jdbc[63]: exception
+org.h2.jdbc.JdbcSQLSyntaxErrorException: Table "HTE_COMMENT" already exists; SQL statement:
+create global temporary table HTE_comment(date date, rn_ integer not null, book_id bigint, id bigint, user_id bigint, content varchar(255), primary key (rn_)) transactional [42101-240]
+2026-03-16 17:54:24.537690+02:00 jdbc[63]: exception
+org.h2.jdbc.JdbcSQLSyntaxErrorException: Table "HTE_LEND" already exists; SQL statement:
+create global temporary table HTE_lend(lendingDate date, returnDate date, rn_ integer not null, book_id bigint, id bigint, user_id bigint, primary key (rn_)) transactional [42101-240]
+2026-03-16 17:54:24.539706+02:00 jdbc[63]: exception
+org.h2.jdbc.JdbcSQLSyntaxErrorException: Table "HTE_BOOK" already exists; SQL statement:
+create global temporary table HTE_book(pageCount integer, rn_ integer not null, category_id bigint, id bigint, author varchar(255), image varchar(255), summary varchar(255), title varchar(255), primary key (rn_)) transactional [42101-240]
+2026-03-16 17:54:24.541721+02:00 jdbc[63]: exception
+org.h2.jdbc.JdbcSQLSyntaxErrorException: Table "HTE_CATEGORY" already exists; SQL statement:
+create global temporary table HTE_category(rn_ integer not null, id bigint, color varchar(255), description varchar(255), name varchar(255), primary key (rn_)) transactional [42101-240]
+2026-03-16 17:55:42.703810+02:00 jdbc[73]: exception
+org.h2.jdbc.JdbcSQLSyntaxErrorException: Table "HTE_COMMENT" already exists; SQL statement:
+create global temporary table HTE_comment(date date, rn_ integer not null, book_id bigint, id bigint, user_id bigint, content varchar(255), primary key (rn_)) transactional [42101-240]
+2026-03-16 17:55:42.704855+02:00 jdbc[73]: exception
+org.h2.jdbc.JdbcSQLSyntaxErrorException: Table "HTE_LEND" already exists; SQL statement:
+create global temporary table HTE_lend(lendingDate date, returnDate date, rn_ integer not null, book_id bigint, id bigint, user_id bigint, primary key (rn_)) transactional [42101-240]
+2026-03-16 17:55:42.706864+02:00 jdbc[73]: exception
+org.h2.jdbc.JdbcSQLSyntaxErrorException: Table "HTE_BOOK" already exists; SQL statement:
+create global temporary table HTE_book(pageCount integer, rn_ integer not null, category_id bigint, id bigint, author varchar(255), image varchar(255), summary varchar(255), title varchar(255), primary key (rn_)) transactional [42101-240]
+2026-03-16 17:55:42.706864+02:00 jdbc[73]: exception
+org.h2.jdbc.JdbcSQLSyntaxErrorException: Table "HTE_CATEGORY" already exists; SQL statement:
+create global temporary table HTE_category(rn_ integer not null, id bigint, color varchar(255), description varchar(255), name varchar(255), primary key (rn_)) transactional [42101-240]
+2026-03-16 17:59:47.282688+02:00 jdbc[83]: exception
+org.h2.jdbc.JdbcSQLSyntaxErrorException: Table "HTE_COMMENT" already exists; SQL statement:
+create global temporary table HTE_comment(date date, rn_ integer not null, book_id bigint, id bigint, user_id bigint, content varchar(255), primary key (rn_)) transactional [42101-240]
+2026-03-16 17:59:47.282688+02:00 jdbc[83]: exception
+org.h2.jdbc.JdbcSQLSyntaxErrorException: Table "HTE_LEND" already exists; SQL statement:
+create global temporary table HTE_lend(lendingDate date, returnDate date, rn_ integer not null, book_id bigint, id bigint, user_id bigint, primary key (rn_)) transactional [42101-240]
+2026-03-16 17:59:47.285214+02:00 jdbc[83]: exception
+org.h2.jdbc.JdbcSQLSyntaxErrorException: Table "HTE_BOOK" already exists; SQL statement:
+create global temporary table HTE_book(pageCount integer, rn_ integer not null, category_id bigint, id bigint, author varchar(255), image varchar(255), summary varchar(255), title varchar(255), primary key (rn_)) transactional [42101-240]
+2026-03-16 17:59:47.285760+02:00 jdbc[83]: exception
+org.h2.jdbc.JdbcSQLSyntaxErrorException: Table "HTE_CATEGORY" already exists; SQL statement:
+create global temporary table HTE_category(rn_ integer not null, id bigint, color varchar(255), description varchar(255), name varchar(255), primary key (rn_)) transactional [42101-240]
+2026-03-16 19:55:11.549573+02:00 jdbc[133]: exception
+org.h2.jdbc.JdbcSQLSyntaxErrorException: Table "HTE_COMMENT" already exists; SQL statement:
+create global temporary table HTE_comment(date date, rn_ integer not null, book_id bigint, id bigint, user_id bigint, content varchar(255), primary key (rn_)) transactional [42101-240]
+2026-03-16 19:55:11.549573+02:00 jdbc[133]: exception
+org.h2.jdbc.JdbcSQLSyntaxErrorException: Table "HTE_LEND" already exists; SQL statement:
+create global temporary table HTE_lend(lendingDate date, returnDate date, rn_ integer not null, book_id bigint, id bigint, user_id bigint, primary key (rn_)) transactional [42101-240]
+2026-03-16 19:55:11.550572+02:00 jdbc[133]: exception
+org.h2.jdbc.JdbcSQLSyntaxErrorException: Table "HTE_BOOK" already exists; SQL statement:
+create global temporary table HTE_book(pageCount integer, rn_ integer not null, category_id bigint, id bigint, author varchar(255), image varchar(255), summary varchar(255), title varchar(255), primary key (rn_)) transactional [42101-240]
+2026-03-16 19:55:11.550572+02:00 jdbc[133]: exception
+org.h2.jdbc.JdbcSQLSyntaxErrorException: Table "HTE_CATEGORY" already exists; SQL statement:
+create global temporary table HTE_category(rn_ integer not null, id bigint, color varchar(255), description varchar(255), name varchar(255), primary key (rn_)) transactional [42101-240]
+2026-03-16 20:00:35.258906+02:00 jdbc[143]: exception
+org.h2.jdbc.JdbcSQLSyntaxErrorException: Table "HTE_COMMENT" already exists; SQL statement:
+create global temporary table HTE_comment(date date, rn_ integer not null, book_id bigint, id bigint, user_id bigint, content varchar(255), primary key (rn_)) transactional [42101-240]
+2026-03-16 20:00:35.258906+02:00 jdbc[143]: exception
+org.h2.jdbc.JdbcSQLSyntaxErrorException: Table "HTE_LEND" already exists; SQL statement:
+create global temporary table HTE_lend(lendingDate date, returnDate date, rn_ integer not null, book_id bigint, id bigint, user_id bigint, primary key (rn_)) transactional [42101-240]
+2026-03-16 20:00:35.258906+02:00 jdbc[143]: exception
+org.h2.jdbc.JdbcSQLSyntaxErrorException: Table "HTE_BOOK" already exists; SQL statement:
+create global temporary table HTE_book(pageCount integer, rn_ integer not null, category_id bigint, id bigint, author varchar(255), image varchar(255), summary varchar(255), title varchar(255), primary key (rn_)) transactional [42101-240]
+2026-03-16 20:00:35.265587+02:00 jdbc[143]: exception
+org.h2.jdbc.JdbcSQLSyntaxErrorException: Table "HTE_CATEGORY" already exists; SQL statement:
+create global temporary table HTE_category(rn_ integer not null, id bigint, color varchar(255), description varchar(255), name varchar(255), primary key (rn_)) transactional [42101-240]
+2026-03-16 20:00:37.504365+02:00 jdbc[153]: exception
+org.h2.jdbc.JdbcSQLSyntaxErrorException: Table "HTE_COMMENT" already exists; SQL statement:
+create global temporary table HTE_comment(date date, rn_ integer not null, book_id bigint, id bigint, user_id bigint, content varchar(255), primary key (rn_)) transactional [42101-240]
+2026-03-16 20:00:37.504365+02:00 jdbc[153]: exception
+org.h2.jdbc.JdbcSQLSyntaxErrorException: Table "HTE_LEND" already exists; SQL statement:
+create global temporary table HTE_lend(lendingDate date, returnDate date, rn_ integer not null, book_id bigint, id bigint, user_id bigint, primary key (rn_)) transactional [42101-240]
+2026-03-16 20:00:37.504365+02:00 jdbc[153]: exception
+org.h2.jdbc.JdbcSQLSyntaxErrorException: Table "HTE_BOOK" already exists; SQL statement:
+create global temporary table HTE_book(pageCount integer, rn_ integer not null, category_id bigint, id bigint, author varchar(255), image varchar(255), summary varchar(255), title varchar(255), primary key (rn_)) transactional [42101-240]
+2026-03-16 20:00:37.504365+02:00 jdbc[153]: exception
+org.h2.jdbc.JdbcSQLSyntaxErrorException: Table "HTE_CATEGORY" already exists; SQL statement:
+create global temporary table HTE_category(rn_ integer not null, id bigint, color varchar(255), description varchar(255), name varchar(255), primary key (rn_)) transactional [42101-240]
+2026-03-16 20:30:14.616445+02:00 jdbc[163]: exception
+org.h2.jdbc.JdbcSQLSyntaxErrorException: Syntax error in SQL statement "SELECT * FROM LEND \000d\000a[*]select * from users"; SQL statement:
+SELECT * FROM LEND 
+select * from users [42000-240]
+2026-03-16 20:33:51.351620+02:00 jdbc[163]: exception
+org.h2.jdbc.JdbcSQLDataException: Data conversion error converting "'' (BOOK: ""ID"" BIGINT NOT NULL)"; SQL statement:
+INSERT INTO "PUBLIC"."BOOK"("ID","AUTHOR","IMAGE","PAGE_COUNT","SUMMARY","TITLE","CATEGORY_ID")VALUES(?,?,?,?,?,?,?) [22018-240]
+2026-03-16 20:33:51.351620+02:00 jdbc[163]: exception
+org.h2.jdbc.JdbcSQLDataException: Data conversion error converting "'' (BOOK: ""ID"" BIGINT NOT NULL)"; SQL statement:
+INSERT INTO "PUBLIC"."BOOK"("ID","AUTHOR","IMAGE","PAGE_COUNT","SUMMARY","TITLE","CATEGORY_ID")VALUES(?,?,?,?,?,?,?) [22018-240]
+2026-03-16 22:55:55.243005+02:00 jdbc[225]: null
+org.h2.message.DbException: The connection was not closed by the application and is garbage collected [90018-240]
+	at org.h2.message.DbException.get(DbException.java:223)
+	at org.h2.message.DbException.get(DbException.java:199)
+	at org.h2.message.DbException.get(DbException.java:188)
+	at org.h2.jdbc.JdbcConnection.closeOld(JdbcConnection.java:217)
+	at org.h2.jdbc.JdbcConnection.<init>(JdbcConnection.java:134)
+	at org.h2.Driver.connect(Driver.java:59)
+	at com.zaxxer.hikari.util.DriverDataSource.getConnection(DriverDataSource.java:144)
+	at com.zaxxer.hikari.pool.PoolBase.newConnection(PoolBase.java:373)
+	at com.zaxxer.hikari.pool.PoolBase.newPoolEntry(PoolBase.java:210)
+	at com.zaxxer.hikari.pool.HikariPool.createPoolEntry(HikariPool.java:488)
+	at com.zaxxer.hikari.pool.HikariPool$PoolEntryCreator.call(HikariPool.java:752)
+	at com.zaxxer.hikari.pool.HikariPool$PoolEntryCreator.call(HikariPool.java:731)
+	at java.base/java.util.concurrent.FutureTask.run(FutureTask.java:317)
+	at java.base/java.util.concurrent.ThreadPoolExecutor.runWorker(ThreadPoolExecutor.java:1144)
+	at java.base/java.util.concurrent.ThreadPoolExecutor$Worker.run(ThreadPoolExecutor.java:642)
+	at java.base/java.lang.Thread.run(Thread.java:1583)
+Caused by: org.h2.jdbc.JdbcSQLNonTransientConnectionException: The connection was not closed by the application and is garbage collected [90018-240]
+	at org.h2.message.DbException.getJdbcSQLException(DbException.java:690)
+	at org.h2.message.DbException.getJdbcSQLException(DbException.java:489)
+	... 16 more
+2026-03-18 17:48:58.272224+02:00 jdbc[13]: exception
+org.h2.jdbc.JdbcSQLSyntaxErrorException: Table "HTE_COMMENT" already exists; SQL statement:
+create global temporary table HTE_comment(date date, rn_ integer not null, book_id bigint, id bigint, user_id bigint, content varchar(255), primary key (rn_)) transactional [42101-240]
+2026-03-18 17:48:58.289209+02:00 jdbc[13]: exception
+org.h2.jdbc.JdbcSQLSyntaxErrorException: Table "HTE_LEND" already exists; SQL statement:
+create global temporary table HTE_lend(lendingDate date, returnDate date, rn_ integer not null, book_id bigint, id bigint, user_id bigint, primary key (rn_)) transactional [42101-240]
+2026-03-18 17:48:58.292244+02:00 jdbc[13]: exception
+org.h2.jdbc.JdbcSQLSyntaxErrorException: Table "HTE_BOOK" already exists; SQL statement:
+create global temporary table HTE_book(pageCount integer, rn_ integer not null, category_id bigint, id bigint, author varchar(255), image varchar(255), summary varchar(255), title varchar(255), primary key (rn_)) transactional [42101-240]
+2026-03-18 17:48:58.327342+02:00 jdbc[13]: exception
+org.h2.jdbc.JdbcSQLSyntaxErrorException: Table "HTE_CATEGORY" already exists; SQL statement:
+create global temporary table HTE_category(rn_ integer not null, id bigint, color varchar(255), description varchar(255), name varchar(255), primary key (rn_)) transactional [42101-240]
+2026-03-18 17:49:01.312037+02:00 jdbc[23]: exception
+org.h2.jdbc.JdbcSQLSyntaxErrorException: Table "HTE_COMMENT" already exists; SQL statement:
+create global temporary table HTE_comment(date date, rn_ integer not null, book_id bigint, id bigint, user_id bigint, content varchar(255), primary key (rn_)) transactional [42101-240]
+2026-03-18 17:49:01.312037+02:00 jdbc[23]: exception
+org.h2.jdbc.JdbcSQLSyntaxErrorException: Table "HTE_LEND" already exists; SQL statement:
+create global temporary table HTE_lend(lendingDate date, returnDate date, rn_ integer not null, book_id bigint, id bigint, user_id bigint, primary key (rn_)) transactional [42101-240]
+2026-03-18 17:49:01.312037+02:00 jdbc[23]: exception
+org.h2.jdbc.JdbcSQLSyntaxErrorException: Table "HTE_BOOK" already exists; SQL statement:
+create global temporary table HTE_book(pageCount integer, rn_ integer not null, category_id bigint, id bigint, author varchar(255), image varchar(255), summary varchar(255), title varchar(255), primary key (rn_)) transactional [42101-240]
+2026-03-18 17:49:01.324179+02:00 jdbc[23]: exception
+org.h2.jdbc.JdbcSQLSyntaxErrorException: Table "HTE_CATEGORY" already exists; SQL statement:
+create global temporary table HTE_category(rn_ integer not null, id bigint, color varchar(255), description varchar(255), name varchar(255), primary key (rn_)) transactional [42101-240]
+2026-03-18 18:26:24.161517+02:00 jdbc[43]: exception
+org.h2.jdbc.JdbcSQLSyntaxErrorException: Table "HTE_COMMENT" already exists; SQL statement:
+create global temporary table HTE_comment(date date, rn_ integer not null, book_id bigint, id bigint, user_id bigint, content varchar(255), primary key (rn_)) transactional [42101-240]
+2026-03-18 18:26:24.161517+02:00 jdbc[43]: exception
+org.h2.jdbc.JdbcSQLSyntaxErrorException: Table "HTE_LEND" already exists; SQL statement:
+create global temporary table HTE_lend(lendingDate date, returnDate date, rn_ integer not null, book_id bigint, id bigint, user_id bigint, primary key (rn_)) transactional [42101-240]
+2026-03-18 18:26:24.171580+02:00 jdbc[43]: exception
+org.h2.jdbc.JdbcSQLSyntaxErrorException: Table "HTE_BOOK" already exists; SQL statement:
+create global temporary table HTE_book(pageCount integer, rn_ integer not null, category_id bigint, id bigint, author varchar(255), image varchar(255), summary varchar(255), title varchar(255), primary key (rn_)) transactional [42101-240]
+2026-03-18 18:26:24.173780+02:00 jdbc[43]: exception
+org.h2.jdbc.JdbcSQLSyntaxErrorException: Table "HTE_CATEGORY" already exists; SQL statement:
+create global temporary table HTE_category(rn_ integer not null, id bigint, color varchar(255), description varchar(255), name varchar(255), primary key (rn_)) transactional [42101-240]
+2026-03-18 18:27:49.100617+02:00 jdbc[53]: exception
+org.h2.jdbc.JdbcSQLSyntaxErrorException: Table "HTE_COMMENT" already exists; SQL statement:
+create global temporary table HTE_comment(date date, rn_ integer not null, book_id bigint, id bigint, user_id bigint, content varchar(255), primary key (rn_)) transactional [42101-240]
+2026-03-18 18:27:49.105832+02:00 jdbc[53]: exception
+org.h2.jdbc.JdbcSQLSyntaxErrorException: Table "HTE_LEND" already exists; SQL statement:
+create global temporary table HTE_lend(lendingDate date, returnDate date, rn_ integer not null, book_id bigint, id bigint, user_id bigint, primary key (rn_)) transactional [42101-240]
+2026-03-18 18:27:49.107847+02:00 jdbc[53]: exception
+org.h2.jdbc.JdbcSQLSyntaxErrorException: Table "HTE_BOOK" already exists; SQL statement:
+create global temporary table HTE_book(pageCount integer, rn_ integer not null, category_id bigint, id bigint, author varchar(255), image varchar(255), summary varchar(255), title varchar(255), primary key (rn_)) transactional [42101-240]
+2026-03-18 18:27:49.107847+02:00 jdbc[53]: exception
+org.h2.jdbc.JdbcSQLSyntaxErrorException: Table "HTE_CATEGORY" already exists; SQL statement:
+create global temporary table HTE_category(rn_ integer not null, id bigint, color varchar(255), description varchar(255), name varchar(255), primary key (rn_)) transactional [42101-240]
+2026-03-18 18:33:51.657701+02:00 jdbc[63]: exception
+org.h2.jdbc.JdbcSQLSyntaxErrorException: Table "HTE_COMMENT" already exists; SQL statement:
+create global temporary table HTE_comment(date date, rn_ integer not null, book_id bigint, id bigint, user_id bigint, content varchar(255), primary key (rn_)) transactional [42101-240]
+2026-03-18 18:33:51.657701+02:00 jdbc[63]: exception
+org.h2.jdbc.JdbcSQLSyntaxErrorException: Table "HTE_LEND" already exists; SQL statement:
+create global temporary table HTE_lend(lendingDate date, returnDate date, rn_ integer not null, book_id bigint, id bigint, user_id bigint, primary key (rn_)) transactional [42101-240]
+2026-03-18 18:33:51.657701+02:00 jdbc[63]: exception
+org.h2.jdbc.JdbcSQLSyntaxErrorException: Table "HTE_BOOK" already exists; SQL statement:
+create global temporary table HTE_book(pageCount integer, rn_ integer not null, category_id bigint, id bigint, author varchar(255), image varchar(255), summary varchar(255), title varchar(255), primary key (rn_)) transactional [42101-240]
+2026-03-18 18:33:51.673491+02:00 jdbc[63]: exception
+org.h2.jdbc.JdbcSQLSyntaxErrorException: Table "HTE_CATEGORY" already exists; SQL statement:
+create global temporary table HTE_category(rn_ integer not null, id bigint, color varchar(255), description varchar(255), name varchar(255), primary key (rn_)) transactional [42101-240]
+2026-03-18 18:44:02.836233+02:00 jdbc[73]: exception
+org.h2.jdbc.JdbcSQLSyntaxErrorException: Table "HTE_COMMENT" already exists; SQL statement:
+create global temporary table HTE_comment(date date, rn_ integer not null, book_id bigint, id bigint, user_id bigint, content varchar(255), primary key (rn_)) transactional [42101-240]
+2026-03-18 18:44:02.838251+02:00 jdbc[73]: exception
+org.h2.jdbc.JdbcSQLSyntaxErrorException: Table "HTE_LEND" already exists; SQL statement:
+create global temporary table HTE_lend(lendingDate date, returnDate date, rn_ integer not null, book_id bigint, id bigint, user_id bigint, primary key (rn_)) transactional [42101-240]
+2026-03-18 18:44:02.838251+02:00 jdbc[73]: exception
+org.h2.jdbc.JdbcSQLSyntaxErrorException: Table "HTE_BOOK" already exists; SQL statement:
+create global temporary table HTE_book(pageCount integer, rn_ integer not null, category_id bigint, id bigint, author varchar(255), image varchar(255), summary varchar(255), title varchar(255), primary key (rn_)) transactional [42101-240]
+2026-03-18 18:44:02.842517+02:00 jdbc[73]: exception
+org.h2.jdbc.JdbcSQLSyntaxErrorException: Table "HTE_CATEGORY" already exists; SQL statement:
+create global temporary table HTE_category(rn_ integer not null, id bigint, color varchar(255), description varchar(255), name varchar(255), primary key (rn_)) transactional [42101-240]
+2026-03-18 18:44:05.529830+02:00 jdbc[83]: exception
+org.h2.jdbc.JdbcSQLSyntaxErrorException: Table "HTE_COMMENT" already exists; SQL statement:
+create global temporary table HTE_comment(date date, rn_ integer not null, book_id bigint, id bigint, user_id bigint, content varchar(255), primary key (rn_)) transactional [42101-240]
+2026-03-18 18:44:05.536502+02:00 jdbc[83]: exception
+org.h2.jdbc.JdbcSQLSyntaxErrorException: Table "HTE_LEND" already exists; SQL statement:
+create global temporary table HTE_lend(lendingDate date, returnDate date, rn_ integer not null, book_id bigint, id bigint, user_id bigint, primary key (rn_)) transactional [42101-240]
+2026-03-18 18:44:05.536502+02:00 jdbc[83]: exception
+org.h2.jdbc.JdbcSQLSyntaxErrorException: Table "HTE_BOOK" already exists; SQL statement:
+create global temporary table HTE_book(pageCount integer, rn_ integer not null, category_id bigint, id bigint, author varchar(255), image varchar(255), summary varchar(255), title varchar(255), primary key (rn_)) transactional [42101-240]
+2026-03-18 18:44:05.536502+02:00 jdbc[83]: exception
+org.h2.jdbc.JdbcSQLSyntaxErrorException: Table "HTE_CATEGORY" already exists; SQL statement:
+create global temporary table HTE_category(rn_ integer not null, id bigint, color varchar(255), description varchar(255), name varchar(255), primary key (rn_)) transactional [42101-240]
+2026-03-18 18:48:37.234520+02:00 jdbc[93]: exception
+org.h2.jdbc.JdbcSQLSyntaxErrorException: Table "HTE_COMMENT" already exists; SQL statement:
+create global temporary table HTE_comment(date date, rn_ integer not null, book_id bigint, id bigint, user_id bigint, content varchar(255), primary key (rn_)) transactional [42101-240]
+2026-03-18 18:48:37.237481+02:00 jdbc[93]: exception
+org.h2.jdbc.JdbcSQLSyntaxErrorException: Table "HTE_LEND" already exists; SQL statement:
+create global temporary table HTE_lend(lendingDate date, returnDate date, rn_ integer not null, book_id bigint, id bigint, user_id bigint, primary key (rn_)) transactional [42101-240]
+2026-03-18 18:48:37.237481+02:00 jdbc[93]: exception
+org.h2.jdbc.JdbcSQLSyntaxErrorException: Table "HTE_BOOK" already exists; SQL statement:
+create global temporary table HTE_book(pageCount integer, rn_ integer not null, category_id bigint, id bigint, author varchar(255), image varchar(255), summary varchar(255), title varchar(255), primary key (rn_)) transactional [42101-240]
+2026-03-18 18:48:37.240242+02:00 jdbc[93]: exception
+org.h2.jdbc.JdbcSQLSyntaxErrorException: Table "HTE_CATEGORY" already exists; SQL statement:
+create global temporary table HTE_category(rn_ integer not null, id bigint, color varchar(255), description varchar(255), name varchar(255), primary key (rn_)) transactional [42101-240]
+2026-03-18 18:52:41.330629+02:00 jdbc[103]: exception
+org.h2.jdbc.JdbcSQLSyntaxErrorException: Table "HTE_COMMENT" already exists; SQL statement:
+create global temporary table HTE_comment(date date, rn_ integer not null, book_id bigint, id bigint, user_id bigint, content varchar(255), primary key (rn_)) transactional [42101-240]
+2026-03-18 18:52:41.330629+02:00 jdbc[103]: exception
+org.h2.jdbc.JdbcSQLSyntaxErrorException: Table "HTE_LEND" already exists; SQL statement:
+create global temporary table HTE_lend(lendingDate date, returnDate date, rn_ integer not null, book_id bigint, id bigint, user_id bigint, primary key (rn_)) transactional [42101-240]
+2026-03-18 18:52:41.334404+02:00 jdbc[103]: exception
+org.h2.jdbc.JdbcSQLSyntaxErrorException: Table "HTE_BOOK" already exists; SQL statement:
+create global temporary table HTE_book(pageCount integer, rn_ integer not null, category_id bigint, id bigint, author varchar(255), image varchar(255), summary varchar(255), title varchar(255), primary key (rn_)) transactional [42101-240]
+2026-03-18 18:52:41.336390+02:00 jdbc[103]: exception
+org.h2.jdbc.JdbcSQLSyntaxErrorException: Table "HTE_CATEGORY" already exists; SQL statement:
+create global temporary table HTE_category(rn_ integer not null, id bigint, color varchar(255), description varchar(255), name varchar(255), primary key (rn_)) transactional [42101-240]
+2026-03-18 19:26:30.189055+02:00 jdbc[123]: exception
+org.h2.jdbc.JdbcSQLSyntaxErrorException: Table "HTE_COMMENT" already exists; SQL statement:
+create global temporary table HTE_comment(date date, rn_ integer not null, book_id bigint, id bigint, user_id bigint, content varchar(255), primary key (rn_)) transactional [42101-240]
+2026-03-18 19:26:30.189055+02:00 jdbc[123]: exception
+org.h2.jdbc.JdbcSQLSyntaxErrorException: Table "HTE_LEND" already exists; SQL statement:
+create global temporary table HTE_lend(lendingDate date, returnDate date, rn_ integer not null, book_id bigint, id bigint, user_id bigint, primary key (rn_)) transactional [42101-240]
+2026-03-18 19:26:30.189055+02:00 jdbc[123]: exception
+org.h2.jdbc.JdbcSQLSyntaxErrorException: Table "HTE_BOOK" already exists; SQL statement:
+create global temporary table HTE_book(pageCount integer, rn_ integer not null, category_id bigint, id bigint, author varchar(255), image varchar(255), summary varchar(255), title varchar(255), primary key (rn_)) transactional [42101-240]
+2026-03-18 19:26:30.195216+02:00 jdbc[123]: exception
+org.h2.jdbc.JdbcSQLSyntaxErrorException: Table "HTE_CATEGORY" already exists; SQL statement:
+create global temporary table HTE_category(rn_ integer not null, id bigint, color varchar(255), description varchar(255), name varchar(255), primary key (rn_)) transactional [42101-240]
+2026-03-18 19:26:32.852673+02:00 jdbc[133]: exception
+org.h2.jdbc.JdbcSQLSyntaxErrorException: Table "HTE_COMMENT" already exists; SQL statement:
+create global temporary table HTE_comment(date date, rn_ integer not null, book_id bigint, id bigint, user_id bigint, content varchar(255), primary key (rn_)) transactional [42101-240]
+2026-03-18 19:26:32.854944+02:00 jdbc[133]: exception
+org.h2.jdbc.JdbcSQLSyntaxErrorException: Table "HTE_LEND" already exists; SQL statement:
+create global temporary table HTE_lend(lendingDate date, returnDate date, rn_ integer not null, book_id bigint, id bigint, user_id bigint, primary key (rn_)) transactional [42101-240]
+2026-03-18 19:26:32.854944+02:00 jdbc[133]: exception
+org.h2.jdbc.JdbcSQLSyntaxErrorException: Table "HTE_BOOK" already exists; SQL statement:
+create global temporary table HTE_book(pageCount integer, rn_ integer not null, category_id bigint, id bigint, author varchar(255), image varchar(255), summary varchar(255), title varchar(255), primary key (rn_)) transactional [42101-240]
+2026-03-18 19:26:32.854944+02:00 jdbc[133]: exception
+org.h2.jdbc.JdbcSQLSyntaxErrorException: Table "HTE_CATEGORY" already exists; SQL statement:
+create global temporary table HTE_category(rn_ integer not null, id bigint, color varchar(255), description varchar(255), name varchar(255), primary key (rn_)) transactional [42101-240]
+2026-03-18 19:27:04.004748+02:00 jdbc[143]: exception
+org.h2.jdbc.JdbcSQLSyntaxErrorException: Table "HTE_COMMENT" already exists; SQL statement:
+create global temporary table HTE_comment(date date, rn_ integer not null, book_id bigint, id bigint, user_id bigint, content varchar(255), primary key (rn_)) transactional [42101-240]
+2026-03-18 19:27:04.009514+02:00 jdbc[143]: exception
+org.h2.jdbc.JdbcSQLSyntaxErrorException: Table "HTE_LEND" already exists; SQL statement:
+create global temporary table HTE_lend(lendingDate date, returnDate date, rn_ integer not null, book_id bigint, id bigint, user_id bigint, primary key (rn_)) transactional [42101-240]
+2026-03-18 19:27:04.009826+02:00 jdbc[143]: exception
+org.h2.jdbc.JdbcSQLSyntaxErrorException: Table "HTE_BOOK" already exists; SQL statement:
+create global temporary table HTE_book(pageCount integer, rn_ integer not null, category_id bigint, id bigint, author varchar(255), image varchar(255), summary varchar(255), title varchar(255), primary key (rn_)) transactional [42101-240]
+2026-03-18 19:27:04.010931+02:00 jdbc[143]: exception
+org.h2.jdbc.JdbcSQLSyntaxErrorException: Table "HTE_CATEGORY" already exists; SQL statement:
+create global temporary table HTE_category(rn_ integer not null, id bigint, color varchar(255), description varchar(255), name varchar(255), primary key (rn_)) transactional [42101-240]
+2026-03-18 19:27:06.639892+02:00 jdbc[153]: exception
+org.h2.jdbc.JdbcSQLSyntaxErrorException: Table "HTE_COMMENT" already exists; SQL statement:
+create global temporary table HTE_comment(date date, rn_ integer not null, book_id bigint, id bigint, user_id bigint, content varchar(255), primary key (rn_)) transactional [42101-240]
+2026-03-18 19:27:06.639892+02:00 jdbc[153]: exception
+org.h2.jdbc.JdbcSQLSyntaxErrorException: Table "HTE_LEND" already exists; SQL statement:
+create global temporary table HTE_lend(lendingDate date, returnDate date, rn_ integer not null, book_id bigint, id bigint, user_id bigint, primary key (rn_)) transactional [42101-240]
+2026-03-18 19:27:06.639892+02:00 jdbc[153]: exception
+org.h2.jdbc.JdbcSQLSyntaxErrorException: Table "HTE_BOOK" already exists; SQL statement:
+create global temporary table HTE_book(pageCount integer, rn_ integer not null, category_id bigint, id bigint, author varchar(255), image varchar(255), summary varchar(255), title varchar(255), primary key (rn_)) transactional [42101-240]
+2026-03-18 19:27:06.639892+02:00 jdbc[153]: exception
+org.h2.jdbc.JdbcSQLSyntaxErrorException: Table "HTE_CATEGORY" already exists; SQL statement:
+create global temporary table HTE_category(rn_ integer not null, id bigint, color varchar(255), description varchar(255), name varchar(255), primary key (rn_)) transactional [42101-240]
+2026-03-18 19:29:51.419045+02:00 jdbc[163]: exception
+org.h2.jdbc.JdbcSQLSyntaxErrorException: Table "HTE_COMMENT" already exists; SQL statement:
+create global temporary table HTE_comment(date date, rn_ integer not null, book_id bigint, id bigint, user_id bigint, content varchar(255), primary key (rn_)) transactional [42101-240]
+2026-03-18 19:29:51.420046+02:00 jdbc[163]: exception
+org.h2.jdbc.JdbcSQLSyntaxErrorException: Table "HTE_LEND" already exists; SQL statement:
+create global temporary table HTE_lend(lendingDate date, returnDate date, rn_ integer not null, book_id bigint, id bigint, user_id bigint, primary key (rn_)) transactional [42101-240]
+2026-03-18 19:29:51.420046+02:00 jdbc[163]: exception
+org.h2.jdbc.JdbcSQLSyntaxErrorException: Table "HTE_BOOK" already exists; SQL statement:
+create global temporary table HTE_book(pageCount integer, rn_ integer not null, category_id bigint, id bigint, author varchar(255), image varchar(255), summary varchar(255), title varchar(255), primary key (rn_)) transactional [42101-240]
+2026-03-18 19:29:51.421048+02:00 jdbc[163]: exception
+org.h2.jdbc.JdbcSQLSyntaxErrorException: Table "HTE_CATEGORY" already exists; SQL statement:
+create global temporary table HTE_category(rn_ integer not null, id bigint, color varchar(255), description varchar(255), name varchar(255), primary key (rn_)) transactional [42101-240]
+2026-03-18 19:36:35.099796+02:00 jdbc[13]: exception
+org.h2.jdbc.JdbcSQLSyntaxErrorException: Table "HTE_COMMENT" already exists; SQL statement:
+create global temporary table HTE_comment(date date, rn_ integer not null, book_id bigint, id bigint, user_id bigint, content varchar(255), primary key (rn_)) transactional [42101-240]
+2026-03-18 19:36:35.104796+02:00 jdbc[13]: exception
+org.h2.jdbc.JdbcSQLSyntaxErrorException: Table "HTE_LEND" already exists; SQL statement:
+create global temporary table HTE_lend(lendingDate date, returnDate date, rn_ integer not null, book_id bigint, id bigint, user_id bigint, primary key (rn_)) transactional [42101-240]
+2026-03-18 19:36:35.105795+02:00 jdbc[13]: exception
+org.h2.jdbc.JdbcSQLSyntaxErrorException: Table "HTE_BOOK" already exists; SQL statement:
+create global temporary table HTE_book(pageCount integer, rn_ integer not null, category_id bigint, id bigint, author varchar(255), image varchar(255), summary varchar(255), title varchar(255), primary key (rn_)) transactional [42101-240]
+2026-03-18 19:36:35.106795+02:00 jdbc[13]: exception
+org.h2.jdbc.JdbcSQLSyntaxErrorException: Table "HTE_CATEGORY" already exists; SQL statement:
+create global temporary table HTE_category(rn_ integer not null, id bigint, color varchar(255), description varchar(255), name varchar(255), primary key (rn_)) transactional [42101-240]
+2026-03-18 19:36:37.225406+02:00 jdbc[23]: exception
+org.h2.jdbc.JdbcSQLSyntaxErrorException: Table "HTE_COMMENT" already exists; SQL statement:
+create global temporary table HTE_comment(date date, rn_ integer not null, book_id bigint, id bigint, user_id bigint, content varchar(255), primary key (rn_)) transactional [42101-240]
+2026-03-18 19:36:37.225406+02:00 jdbc[23]: exception
+org.h2.jdbc.JdbcSQLSyntaxErrorException: Table "HTE_LEND" already exists; SQL statement:
+create global temporary table HTE_lend(lendingDate date, returnDate date, rn_ integer not null, book_id bigint, id bigint, user_id bigint, primary key (rn_)) transactional [42101-240]
+2026-03-18 19:36:37.227407+02:00 jdbc[23]: exception
+org.h2.jdbc.JdbcSQLSyntaxErrorException: Table "HTE_BOOK" already exists; SQL statement:
+create global temporary table HTE_book(pageCount integer, rn_ integer not null, category_id bigint, id bigint, author varchar(255), image varchar(255), summary varchar(255), title varchar(255), primary key (rn_)) transactional [42101-240]
+2026-03-18 19:36:37.230405+02:00 jdbc[23]: exception
+org.h2.jdbc.JdbcSQLSyntaxErrorException: Table "HTE_CATEGORY" already exists; SQL statement:
+create global temporary table HTE_category(rn_ integer not null, id bigint, color varchar(255), description varchar(255), name varchar(255), primary key (rn_)) transactional [42101-240]
+2026-03-18 19:50:02.130041+02:00 jdbc[34]: exception
+org.h2.jdbc.JdbcSQLSyntaxErrorException: Table "HTE_COMMENT" already exists; SQL statement:
+create global temporary table HTE_comment(date date, rn_ integer not null, book_id bigint, id bigint, user_id bigint, content varchar(255), primary key (rn_)) transactional [42101-240]
+2026-03-18 19:50:02.131042+02:00 jdbc[34]: exception
+org.h2.jdbc.JdbcSQLSyntaxErrorException: Table "HTE_LEND" already exists; SQL statement:
+create global temporary table HTE_lend(lendingDate date, returnDate date, rn_ integer not null, book_id bigint, id bigint, user_id bigint, primary key (rn_)) transactional [42101-240]
+2026-03-18 19:50:02.131042+02:00 jdbc[34]: exception
+org.h2.jdbc.JdbcSQLSyntaxErrorException: Table "HTE_BOOK" already exists; SQL statement:
+create global temporary table HTE_book(pageCount integer, rn_ integer not null, category_id bigint, id bigint, author varchar(255), image varchar(255), summary varchar(255), title varchar(255), primary key (rn_)) transactional [42101-240]
+2026-03-18 19:50:02.132042+02:00 jdbc[34]: exception
+org.h2.jdbc.JdbcSQLSyntaxErrorException: Table "HTE_CATEGORY" already exists; SQL statement:
+create global temporary table HTE_category(rn_ integer not null, id bigint, color varchar(255), description varchar(255), name varchar(255), primary key (rn_)) transactional [42101-240]
+2026-03-18 19:50:04.166726+02:00 jdbc[44]: exception
+org.h2.jdbc.JdbcSQLSyntaxErrorException: Table "HTE_COMMENT" already exists; SQL statement:
+create global temporary table HTE_comment(date date, rn_ integer not null, book_id bigint, id bigint, user_id bigint, content varchar(255), primary key (rn_)) transactional [42101-240]
+2026-03-18 19:50:04.168705+02:00 jdbc[44]: exception
+org.h2.jdbc.JdbcSQLSyntaxErrorException: Table "HTE_LEND" already exists; SQL statement:
+create global temporary table HTE_lend(lendingDate date, returnDate date, rn_ integer not null, book_id bigint, id bigint, user_id bigint, primary key (rn_)) transactional [42101-240]
+2026-03-18 19:50:04.169710+02:00 jdbc[44]: exception
+org.h2.jdbc.JdbcSQLSyntaxErrorException: Table "HTE_BOOK" already exists; SQL statement:
+create global temporary table HTE_book(pageCount integer, rn_ integer not null, category_id bigint, id bigint, author varchar(255), image varchar(255), summary varchar(255), title varchar(255), primary key (rn_)) transactional [42101-240]
+2026-03-18 19:50:04.169710+02:00 jdbc[44]: exception
+org.h2.jdbc.JdbcSQLSyntaxErrorException: Table "HTE_CATEGORY" already exists; SQL statement:
+create global temporary table HTE_category(rn_ integer not null, id bigint, color varchar(255), description varchar(255), name varchar(255), primary key (rn_)) transactional [42101-240]
+2026-03-18 20:02:19.007600+02:00 jdbc[54]: exception
+org.h2.jdbc.JdbcSQLSyntaxErrorException: Table "HTE_COMMENT" already exists; SQL statement:
+create global temporary table HTE_comment(date date, rn_ integer not null, book_id bigint, id bigint, user_id bigint, content varchar(255), primary key (rn_)) transactional [42101-240]
+2026-03-18 20:02:19.008712+02:00 jdbc[54]: exception
+org.h2.jdbc.JdbcSQLSyntaxErrorException: Table "HTE_LEND" already exists; SQL statement:
+create global temporary table HTE_lend(lendingDate date, returnDate date, rn_ integer not null, book_id bigint, id bigint, user_id bigint, primary key (rn_)) transactional [42101-240]
+2026-03-18 20:02:19.009719+02:00 jdbc[54]: exception
+org.h2.jdbc.JdbcSQLSyntaxErrorException: Table "HTE_BOOK" already exists; SQL statement:
+create global temporary table HTE_book(pageCount integer, rn_ integer not null, category_id bigint, id bigint, author varchar(255), image varchar(255), summary varchar(255), title varchar(255), primary key (rn_)) transactional [42101-240]
+2026-03-18 20:02:19.010719+02:00 jdbc[54]: exception
+org.h2.jdbc.JdbcSQLSyntaxErrorException: Table "HTE_CATEGORY" already exists; SQL statement:
+create global temporary table HTE_category(rn_ integer not null, id bigint, color varchar(255), description varchar(255), name varchar(255), primary key (rn_)) transactional [42101-240]
+2026-03-18 20:33:24.646390+02:00 jdbc[13]: exception
+org.h2.jdbc.JdbcSQLSyntaxErrorException: Table "HTE_COMMENT" already exists; SQL statement:
+create global temporary table HTE_comment(date date, rn_ integer not null, book_id bigint, id bigint, user_id bigint, content varchar(255), primary key (rn_)) transactional [42101-240]
+2026-03-18 20:33:24.646390+02:00 jdbc[13]: exception
+org.h2.jdbc.JdbcSQLSyntaxErrorException: Table "HTE_LEND" already exists; SQL statement:
+create global temporary table HTE_lend(lendingDate date, returnDate date, rn_ integer not null, book_id bigint, id bigint, user_id bigint, primary key (rn_)) transactional [42101-240]
+2026-03-18 20:33:24.646390+02:00 jdbc[13]: exception
+org.h2.jdbc.JdbcSQLSyntaxErrorException: Table "HTE_BOOK" already exists; SQL statement:
+create global temporary table HTE_book(category_id integer, pageCount integer, rn_ integer not null, id bigint, author varchar(255), image varchar(255), summary varchar(255), title varchar(255), primary key (rn_)) transactional [42101-240]
+2026-03-18 20:33:24.646390+02:00 jdbc[13]: exception
+org.h2.jdbc.JdbcSQLSyntaxErrorException: Table "HTE_CATEGORY" already exists; SQL statement:
+create global temporary table HTE_category(id integer, rn_ integer not null, color varchar(255), description varchar(255), name varchar(255), primary key (rn_)) transactional [42101-240]
+2026-03-18 20:33:27.017173+02:00 jdbc[23]: exception
+org.h2.jdbc.JdbcSQLSyntaxErrorException: Table "HTE_COMMENT" already exists; SQL statement:
+create global temporary table HTE_comment(date date, rn_ integer not null, book_id bigint, id bigint, user_id bigint, content varchar(255), primary key (rn_)) transactional [42101-240]
+2026-03-18 20:33:27.017173+02:00 jdbc[23]: exception
+org.h2.jdbc.JdbcSQLSyntaxErrorException: Table "HTE_LEND" already exists; SQL statement:
+create global temporary table HTE_lend(lendingDate date, returnDate date, rn_ integer not null, book_id bigint, id bigint, user_id bigint, primary key (rn_)) transactional [42101-240]
+2026-03-18 20:33:27.019364+02:00 jdbc[23]: exception
+org.h2.jdbc.JdbcSQLSyntaxErrorException: Table "HTE_BOOK" already exists; SQL statement:
+create global temporary table HTE_book(category_id integer, pageCount integer, rn_ integer not null, id bigint, author varchar(255), image varchar(255), summary varchar(255), title varchar(255), primary key (rn_)) transactional [42101-240]
+2026-03-18 20:33:27.020366+02:00 jdbc[23]: exception
+org.h2.jdbc.JdbcSQLSyntaxErrorException: Table "HTE_CATEGORY" already exists; SQL statement:
+create global temporary table HTE_category(id integer, rn_ integer not null, color varchar(255), description varchar(255), name varchar(255), primary key (rn_)) transactional [42101-240]
+2026-03-18 20:36:02.053801+02:00 jdbc[33]: exception
+org.h2.jdbc.JdbcSQLSyntaxErrorException: Table "HTE_COMMENT" already exists; SQL statement:
+create global temporary table HTE_comment(date date, rn_ integer not null, book_id bigint, id bigint, user_id bigint, content varchar(255), primary key (rn_)) transactional [42101-240]
+2026-03-18 20:36:02.054807+02:00 jdbc[33]: exception
+org.h2.jdbc.JdbcSQLSyntaxErrorException: Table "HTE_LEND" already exists; SQL statement:
+create global temporary table HTE_lend(lendingDate date, returnDate date, rn_ integer not null, book_id bigint, id bigint, user_id bigint, primary key (rn_)) transactional [42101-240]
+2026-03-18 20:36:02.056803+02:00 jdbc[33]: exception
+org.h2.jdbc.JdbcSQLSyntaxErrorException: Table "HTE_BOOK" already exists; SQL statement:
+create global temporary table HTE_book(category_id integer, pageCount integer, rn_ integer not null, id bigint, author varchar(255), image varchar(255), summary varchar(255), title varchar(255), primary key (rn_)) transactional [42101-240]
+2026-03-18 20:36:02.057805+02:00 jdbc[33]: exception
+org.h2.jdbc.JdbcSQLSyntaxErrorException: Table "HTE_CATEGORY" already exists; SQL statement:
+create global temporary table HTE_category(id integer, rn_ integer not null, color varchar(255), description varchar(255), name varchar(255), primary key (rn_)) transactional [42101-240]
+2026-03-18 20:36:04.312184+02:00 jdbc[43]: exception
+org.h2.jdbc.JdbcSQLSyntaxErrorException: Table "HTE_COMMENT" already exists; SQL statement:
+create global temporary table HTE_comment(date date, rn_ integer not null, book_id bigint, id bigint, user_id bigint, content varchar(255), primary key (rn_)) transactional [42101-240]
+2026-03-18 20:36:04.314850+02:00 jdbc[43]: exception
+org.h2.jdbc.JdbcSQLSyntaxErrorException: Table "HTE_LEND" already exists; SQL statement:
+create global temporary table HTE_lend(lendingDate date, returnDate date, rn_ integer not null, book_id bigint, id bigint, user_id bigint, primary key (rn_)) transactional [42101-240]
+2026-03-18 20:36:04.316083+02:00 jdbc[43]: exception
+org.h2.jdbc.JdbcSQLSyntaxErrorException: Table "HTE_BOOK" already exists; SQL statement:
+create global temporary table HTE_book(category_id integer, pageCount integer, rn_ integer not null, id bigint, author varchar(255), image varchar(255), summary varchar(255), title varchar(255), primary key (rn_)) transactional [42101-240]
+2026-03-18 20:36:04.316083+02:00 jdbc[43]: exception
+org.h2.jdbc.JdbcSQLSyntaxErrorException: Table "HTE_CATEGORY" already exists; SQL statement:
+create global temporary table HTE_category(id integer, rn_ integer not null, color varchar(255), description varchar(255), name varchar(255), primary key (rn_)) transactional [42101-240]
+2026-03-18 20:38:22.846362+02:00 jdbc[53]: exception
+org.h2.jdbc.JdbcSQLSyntaxErrorException: Table "HTE_COMMENT" already exists; SQL statement:
+create global temporary table HTE_comment(date date, rn_ integer not null, book_id bigint, id bigint, user_id bigint, content varchar(255), primary key (rn_)) transactional [42101-240]
+2026-03-18 20:38:22.847359+02:00 jdbc[53]: exception
+org.h2.jdbc.JdbcSQLSyntaxErrorException: Table "HTE_LEND" already exists; SQL statement:
+create global temporary table HTE_lend(lendingDate date, returnDate date, rn_ integer not null, book_id bigint, id bigint, user_id bigint, primary key (rn_)) transactional [42101-240]
+2026-03-18 20:38:22.847359+02:00 jdbc[53]: exception
+org.h2.jdbc.JdbcSQLSyntaxErrorException: Table "HTE_BOOK" already exists; SQL statement:
+create global temporary table HTE_book(category_id integer, pageCount integer, rn_ integer not null, id bigint, author varchar(255), image varchar(255), summary varchar(255), title varchar(255), primary key (rn_)) transactional [42101-240]
+2026-03-18 20:38:22.848361+02:00 jdbc[53]: exception
+org.h2.jdbc.JdbcSQLSyntaxErrorException: Table "HTE_CATEGORY" already exists; SQL statement:
+create global temporary table HTE_category(id integer, rn_ integer not null, color varchar(255), description varchar(255), name varchar(255), primary key (rn_)) transactional [42101-240]
+2026-03-18 20:38:24.664639+02:00 jdbc[63]: exception
+org.h2.jdbc.JdbcSQLSyntaxErrorException: Table "HTE_COMMENT" already exists; SQL statement:
+create global temporary table HTE_comment(date date, rn_ integer not null, book_id bigint, id bigint, user_id bigint, content varchar(255), primary key (rn_)) transactional [42101-240]
+2026-03-18 20:38:24.664639+02:00 jdbc[63]: exception
+org.h2.jdbc.JdbcSQLSyntaxErrorException: Table "HTE_LEND" already exists; SQL statement:
+create global temporary table HTE_lend(lendingDate date, returnDate date, rn_ integer not null, book_id bigint, id bigint, user_id bigint, primary key (rn_)) transactional [42101-240]
+2026-03-18 20:38:24.665639+02:00 jdbc[63]: exception
+org.h2.jdbc.JdbcSQLSyntaxErrorException: Table "HTE_BOOK" already exists; SQL statement:
+create global temporary table HTE_book(category_id integer, pageCount integer, rn_ integer not null, id bigint, author varchar(255), image varchar(255), summary varchar(255), title varchar(255), primary key (rn_)) transactional [42101-240]
+2026-03-18 20:38:24.665639+02:00 jdbc[63]: exception
+org.h2.jdbc.JdbcSQLSyntaxErrorException: Table "HTE_CATEGORY" already exists; SQL statement:
+create global temporary table HTE_category(id integer, rn_ integer not null, color varchar(255), description varchar(255), name varchar(255), primary key (rn_)) transactional [42101-240]
+2026-03-18 20:39:48.309994+02:00 jdbc[73]: exception
+org.h2.jdbc.JdbcSQLSyntaxErrorException: Table "HTE_COMMENT" already exists; SQL statement:
+create global temporary table HTE_comment(date date, rn_ integer not null, book_id bigint, id bigint, user_id bigint, content varchar(255), primary key (rn_)) transactional [42101-240]
+2026-03-18 20:39:48.310994+02:00 jdbc[73]: exception
+org.h2.jdbc.JdbcSQLSyntaxErrorException: Table "HTE_LEND" already exists; SQL statement:
+create global temporary table HTE_lend(lendingDate date, returnDate date, rn_ integer not null, book_id bigint, id bigint, user_id bigint, primary key (rn_)) transactional [42101-240]
+2026-03-18 20:39:48.311995+02:00 jdbc[73]: exception
+org.h2.jdbc.JdbcSQLSyntaxErrorException: Table "HTE_BOOK" already exists; SQL statement:
+create global temporary table HTE_book(category_id integer, pageCount integer, rn_ integer not null, id bigint, author varchar(255), image varchar(255), summary varchar(255), title varchar(255), primary key (rn_)) transactional [42101-240]
+2026-03-18 20:39:48.312995+02:00 jdbc[73]: exception
+org.h2.jdbc.JdbcSQLSyntaxErrorException: Table "HTE_CATEGORY" already exists; SQL statement:
+create global temporary table HTE_category(id integer, rn_ integer not null, color varchar(255), description varchar(255), name varchar(255), primary key (rn_)) transactional [42101-240]
+2026-03-18 20:39:50.244620+02:00 jdbc[83]: exception
+org.h2.jdbc.JdbcSQLSyntaxErrorException: Table "HTE_COMMENT" already exists; SQL statement:
+create global temporary table HTE_comment(date date, rn_ integer not null, book_id bigint, id bigint, user_id bigint, content varchar(255), primary key (rn_)) transactional [42101-240]
+2026-03-18 20:39:50.245648+02:00 jdbc[83]: exception
+org.h2.jdbc.JdbcSQLSyntaxErrorException: Table "HTE_LEND" already exists; SQL statement:
+create global temporary table HTE_lend(lendingDate date, returnDate date, rn_ integer not null, book_id bigint, id bigint, user_id bigint, primary key (rn_)) transactional [42101-240]
+2026-03-18 20:39:50.246655+02:00 jdbc[83]: exception
+org.h2.jdbc.JdbcSQLSyntaxErrorException: Table "HTE_BOOK" already exists; SQL statement:
+create global temporary table HTE_book(category_id integer, pageCount integer, rn_ integer not null, id bigint, author varchar(255), image varchar(255), summary varchar(255), title varchar(255), primary key (rn_)) transactional [42101-240]
+2026-03-18 20:39:50.247654+02:00 jdbc[83]: exception
+org.h2.jdbc.JdbcSQLSyntaxErrorException: Table "HTE_CATEGORY" already exists; SQL statement:
+create global temporary table HTE_category(id integer, rn_ integer not null, color varchar(255), description varchar(255), name varchar(255), primary key (rn_)) transactional [42101-240]
